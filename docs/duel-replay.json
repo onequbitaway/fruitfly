@@ -1,0 +1,18 @@
+{
+  "activity" : "Calculated rates from two separate model states. Plot points use real cell positions.",
+  "bloodToggleChangedPixels" : 229,
+  "cellsPerFly" : 166700,
+  "engine" : "Super Bash Folds, MIT, 1028a3b739ef54efdcbe5a2ef0ad1714fe569c47",
+  "flyCount" : 2,
+  "frames" : 238,
+  "hits" : 21,
+  "lastModelTime" : 71.400000000000006,
+  "mode" : "Full map",
+  "modelSecondsPerVideoSecond" : 3,
+  "renderDidNotChangeBrainRates" : true,
+  "ringOuts" : 5,
+  "rules" : "Programmed combat. Rates modulate movement and action timing. This is not learned fly fighting.",
+  "samples" : 714,
+  "seed" : 42,
+  "winner" : 0
+}

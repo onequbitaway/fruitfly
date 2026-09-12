@@ -63,3 +63,25 @@ royale-test-full:
 
 royale-demo: royale-build
 	'dist/Fruitfly Royale.app/Contents/MacOS/FruitflyRoyale' --record experiments/royale/output/full --full
+
+.PHONY: duel duel-build duel-release duel-test duel-test-full duel-demo
+
+duel: duel-build
+	open 'dist/Fruitfly Duel.app'
+
+duel-build:
+	./experiments/duel/scripts/build.sh
+
+duel-release:
+	./experiments/duel/scripts/build.sh --universal
+
+duel-test:
+	./experiments/full-map/scripts/fetch-data.sh
+	swift run -c release --package-path experiments/duel DuelChecks experiments/full-map/Data
+
+duel-test-full:
+	./experiments/full-map/scripts/fetch-data.sh
+	swift run -c release --package-path experiments/duel DuelChecks experiments/full-map/Data --full
+
+duel-demo: duel-build
+	'dist/Fruitfly Duel.app/Contents/MacOS/FruitflyDuel' --record experiments/duel/output/full

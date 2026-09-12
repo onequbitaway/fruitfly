@@ -1,0 +1,45 @@
+name: Duel
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['experiments/duel/**', 'experiments/full-map/Sources/**', 'experiments/full-map/Package.swift', '.github/workflows/duel.yml']
+  pull_request:
+    paths: ['experiments/duel/**', 'experiments/full-map/Sources/**', 'experiments/full-map/Package.swift', '.github/workflows/duel.yml']
+permissions:
+  contents: read
+jobs:
+  duel:
+    name: Duel on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-14, macos-15-intel]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: experiments/duel/package-lock.json
+      - name: Check engine provenance, matches, and committed bundle
+        working-directory: experiments/duel
+        run: |
+          npm ci
+          npm run build
+          git diff --exit-code -- Sources/DuelCore/Resources/engine.js
+          npm test
+      - name: Check two separate brains in both modes
+        run: make duel-test-full
+      - name: Build the app
+        run: make duel-build
+      - name: Check the packaged engine, data, and renderer
+        run: "'dist/Fruitfly Duel.app/Contents/MacOS/FruitflyDuel' --smoke-test"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Fruitfly-Duel-${{ matrix.os }}
+          path: |
+            dist/Fruitfly-Duel-*.zip
+            dist/Fruitfly-Duel-*.sha256

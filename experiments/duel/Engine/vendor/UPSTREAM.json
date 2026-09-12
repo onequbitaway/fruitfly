@@ -1,0 +1,16 @@
+{
+  "repository": "https://github.com/blancmathis/Super_Bash_Folds",
+  "commit": "1028a3b739ef54efdcbe5a2ef0ad1714fe569c47",
+  "license": "MIT",
+  "files": {
+    "engine.ts": "696be00d2dcdb168a7993b90593fa506eaf63cfc61b9cae63199b58b161af9c0",
+    "ai.ts": "dc2bc998a6836008dd3b88913d50f7c03f2b08d07810b97034bdfa40d361e90d",
+    "contracts.ts": "c57bd49f6580a724940fb4314eb2b59211f8a638551517b8806bffb2a120d568",
+    "roster.ts": "616ffd6760eae81708c2b34550a7fa09962a1b18dbe1e7c8685d6b48942c0117",
+    "fighterBuilders.ts": "f9d39cefab4c77cb8eeda3c6873af5c359709c6004eae71317f3b0e5264a057f",
+    "openRoster.ts": "797803e2b94dc26ec23dfc58c2a1c2e43688735da285344f6be951fde66b5879",
+    "stages.ts": "acd51f6f08eec75c2a2c6d99e146a97d2aecbe7c12123dd1c940e644b6891dab",
+    "items.ts": "5f7ddf95f3f7252f37e4b340ff2563b5c2cab6ae4270f118feeafdef7aece044"
+  },
+  "changes": "The listed files are unchanged. Fruitfly supplies its own fighter and stage registries in generated/. No upstream art or audio is included."
+}

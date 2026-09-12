@@ -64,6 +64,23 @@ movement follow game rules. This Full map replay runs at three times model time.
 or run `make royale` from this repository.
 [See controls, source, and model limits.](experiments/royale/README.md)
 
+## Fruitfly Duel
+
+Two flies fight on a leaf stage. Watch double jumps, shields, throws,
+and ring-outs. Each fly starts with three lives.
+
+![Fruitfly Duel: two full-map flies in a platform fight.](docs/media/fruitfly-duel.gif)
+
+Choose Simple or Full map. Each fly has a separate brain state. Calculated
+activity affects movement and attack timing. Fight rules come from the
+MIT-licensed [Super Bash Folds](https://github.com/blancmathis/Super_Bash_Folds)
+engine. The flies have not learned how to fight.
+This Full map replay runs at three times model time.
+
+**[Download Fruitfly Duel](https://github.com/onequbitaway/fruitfly/releases/tag/duel-0.1.0)**
+or run `make duel` from this repository.
+[See controls, source, and model limits.](experiments/duel/README.md)
+
 ## Install
 
 These steps install the desktop pet. For the two-mode preview, use [its setup guide](experiments/full-map/README.md).

@@ -1,0 +1,13 @@
+{
+  "name": "fruitfly-duel-engine",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "build": "esbuild Engine/bridge.ts --bundle --format=iife --global-name=DuelEngine --target=es2020 --outfile=Sources/DuelCore/Resources/engine.js",
+    "test": "node --test Engine/bridge.test.mjs"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2"
+  }
+}
