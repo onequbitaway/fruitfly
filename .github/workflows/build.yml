@@ -1,0 +1,30 @@
+name: Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-14, macos-15-intel]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build the app
+        run: ./scripts/build.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Fruitfly-${{ matrix.os }}
+          path: |
+            dist/*.zip
+            dist/*.sha256
+          if-no-files-found: error
