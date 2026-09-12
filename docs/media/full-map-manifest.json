@@ -1,0 +1,193 @@
+{
+  "kind": "Recorded experimental Full map model; not part of v0.2.0",
+  "dataset": "MaleCNS v1.0",
+  "source": "https://male-cns.janelia.org/download/",
+  "dataLicense": "CC BY 4.0",
+  "attribution": "HHMI Janelia FlyEM, University of Cambridge, MRC Laboratory of Molecular Biology, and Google Research",
+  "cells": 166700,
+  "connections": 25582938,
+  "contacts": 124177617,
+  "cellsWithPositions": 139662,
+  "cellsWithoutPositions": 27038,
+  "selection": "Every non-glial annotation with a nonempty published superclass. No sampling. All positive released edges between these cells.",
+  "sourceSHA256": {
+    "edges.feather": "e35da783d1c686b2b58b3b87cd6a403ae43bfcfba8bff28e08ef752c1a56afc1",
+    "neurotransmitters.feather": "95c9289220663abeb3409f3ad9e5a7f8a53f8093f5139d15502cd08da8879621",
+    "annotations.feather": "2177e246113e4cfbf1e7772ec37c6da1955ff22e8063d0b1f833101f99a9a3b2"
+  },
+  "modelDataFiles": {
+    "neurons.json": {
+      "bytes": 5781476,
+      "sha256": "db7e91abac9e1dfb40a11e3189fa905163b253312657e321b1d99e5cea5b3751"
+    },
+    "simple-network.bin": {
+      "bytes": 3517964,
+      "sha256": "4d5e2ce49e84143e1c0db1c0d89a425f2de0bd6f85d873a0e5032cc15828f4ed"
+    },
+    "network.bin": {
+      "bytes": 205997132,
+      "sha256": "52c7292d4660734ffa4f4f33340e64f82546758587da0faf4674f5bd92186f00"
+    },
+    "simple-neurons.json": {
+      "bytes": 214626,
+      "sha256": "383acceed8fb99489cbcf9b450dc15ccf44db2ef99655f155425ae8ea2737769"
+    }
+  },
+  "frames": 80,
+  "framesPerSecond": 10,
+  "durationSeconds": 8,
+  "modelStepMilliseconds": 0.2,
+  "seed": 7,
+  "foodDropBeforeFrame": 10,
+  "dimensions": [
+    1260,
+    820
+  ],
+  "positionMeaning": "Published somaLocation (cell body) in MaleCNS 8 nm voxel coordinates. Missing locations remain missing.",
+  "cellFileFormat": "gzip of little-endian Float32 rates; frame first, then cell; cell order is full-map-cell-index.json.gz ids",
+  "brightness": "Last 100 ms spike rate; fixed 0–100+ Hz scale in 12 levels; gray points show anatomy",
+  "movement": "Guided pet rule with a DNa02 turn bias",
+  "foodUse": "min(1, mean MN9 Hz / 40) times the chosen consumption rate",
+  "input": "Food creates selected odor input; contact adds LB1 taste input. No direct feeding-pathway stimulation in this recording.",
+  "validation": {
+    "CPUvsGPURateMismatchesAt300ms": 0,
+    "failures": 0,
+    "inputTrials": [
+      {
+        "active": 0,
+        "DNa02LeftHz": 0,
+        "DNa02RightHz": 0,
+        "groupActive": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "input": "No input",
+        "MN9Hz": 0,
+        "wallSecondsPerModelSecond": 0.09029783331789076
+      },
+      {
+        "active": 15398,
+        "DNa02LeftHz": 0,
+        "DNa02RightHz": 0,
+        "groupActive": [
+          1856,
+          77,
+          894,
+          699,
+          4160,
+          222,
+          216,
+          5768,
+          1506
+        ],
+        "input": "Smell",
+        "MN9Hz": 5,
+        "wallSecondsPerModelSecond": 0.4567084168083966
+      },
+      {
+        "active": 15226,
+        "DNa02LeftHz": 0,
+        "DNa02RightHz": 0,
+        "groupActive": [
+          1706,
+          94,
+          864,
+          667,
+          4160,
+          231,
+          231,
+          5716,
+          1557
+        ],
+        "input": "Taste LB1",
+        "MN9Hz": 5,
+        "wallSecondsPerModelSecond": 0.4736710833385587
+      },
+      {
+        "active": 4694,
+        "DNa02LeftHz": 0,
+        "DNa02RightHz": 0,
+        "groupActive": [
+          13,
+          0,
+          657,
+          665,
+          17,
+          187,
+          250,
+          1934,
+          971
+        ],
+        "input": "Feeding pathway",
+        "MN9Hz": 100,
+        "wallSecondsPerModelSecond": 0.38245616666972637
+      },
+      {
+        "active": 15842,
+        "DNa02LeftHz": 90,
+        "DNa02RightHz": 0,
+        "groupActive": [
+          1750,
+          78,
+          1277,
+          701,
+          4159,
+          242,
+          212,
+          5898,
+          1525
+        ],
+        "input": "Visual LC10a",
+        "MN9Hz": 10,
+        "wallSecondsPerModelSecond": 0.4721952499821782
+      }
+    ],
+    "modelStepMilliseconds": 0.2,
+    "processor": "Apple M4 Max",
+    "seed": 7
+  },
+  "recordedModelSourceSHA256": {
+    "Sources/BrainChecks/main.swift": "1c076769be88425b2215caea51a6e026ebd2ee7d1255d9268e55b3ce44bee2bb",
+    "Sources/BrainCore/BrainModel.swift": "4cdd6dd3235d9f4eca7a3f6ac3260892f2d7ab2db6c035dd2d70192cc678c561",
+    "Sources/BrainCore/MetalSolver.swift": "58139d8d31cbf78a4ece114b95d45c87edb7a1f1adea48b66429fb2e270eb126",
+    "Sources/BrainCore/Trial.swift": "ef5f9570210a93c14d564f045ee8cb235a6913008a0497a8361349ad1ee4637e",
+    "Sources/BrainKernel/BrainKernel.cpp": "152686ab817716fa8f2ca0727f5a479610734ca031eb38f3562ec44590a42077",
+    "Sources/BrainKernel/include/BrainKernel.h": "2153e854abda6eb56f7512aefe973ca888ef82e7d935210c04cf38a37340a5dd",
+    "Sources/BrainPreview/Controller.swift": "acd1a02b254d1a71e911ff626317a1001ef6e7f13e6bc7dde053cde495f4a837",
+    "Sources/BrainPreview/Drawing.swift": "5f5d292b1383ae489f414e542fb3a95398cb509a78167f645d97568c0c72a139",
+    "Sources/BrainPreview/FlyPainter.swift": "22b323b6cc48daa2b41e5be471db3ad4d9eeac2322d1aaf99bc9d24289d1eb5a",
+    "Sources/BrainPreview/PreviewView.swift": "f392eade9882d96a4f26aedb2e70e2966f0ace7615acd121d0df7caf8ea50029",
+    "Sources/BrainPreview/Recording.swift": "ead9b7b9fbf6a0ac54e0fe0a83eea08581ca651291d7f7605114d9e6dec0caf8",
+    "Sources/BrainPreview/Smoke.swift": "bcd7c795d125059dceee89fdb94a0bba953edd125c798fe474a80b19346913b6",
+    "Sources/BrainPreview/main.swift": "bb96425609d9e56330b0ff5c6125d9da7de89bdb3e36198804fc9a118fd6308e"
+  },
+  "files": {
+    "full-map-activity.gif": {
+      "bytes": 2058879,
+      "sha256": "ee3c3be9dc872e9c34c24e0d5afd265e6aec88b29ef5851381471de847c30250"
+    },
+    "full-map-activity.png": {
+      "bytes": 337213,
+      "sha256": "fa2527604f2e8b3247f9ec812c2bb13e35097a319a9637347629211a0f9256dc"
+    },
+    "full-map-frames.json": {
+      "bytes": 71187,
+      "sha256": "18e8890e130fcc106ea032aa7597c6c08e6db9e24eb5c53e8033c205d79e613d"
+    },
+    "full-map-cell-activity.f32.gz": {
+      "bytes": 2267993,
+      "sha256": "e112e4a0cbe7e7cd8501b36715da56528c17c1998a66021e5411c9dac0532f28"
+    },
+    "full-map-cell-index.json.gz": {
+      "bytes": 451716,
+      "sha256": "822a8a0a1132e06f81bb987ef0a9e1a6456e4d4a37e810d7286257efd78e2bcb"
+    }
+  }
+}

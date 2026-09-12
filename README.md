@@ -5,14 +5,36 @@ A small pet fly for your Mac desktop.
 The fly moves above your apps. Drop food and watch it land and eat.
 Move the pointer quickly near the fly to make it move away.
 
-![A recorded model run. Food appears, cell values rise, and activity falls after the fly eats.](docs/media/brain-activity.gif)
-
-**Real connections. Live model values.**
-The clip replays the app's model at normal speed. Each dot shows one of the 3,745 included cells.
-The values come from the simulation. They are not recordings from a living fly.
-[See how it works and check the saved values.](docs/activity.md)
-
 **[Download for Mac](https://github.com/onequbitaway/fruitfly/releases/latest)**
+
+## Watch the brain models
+
+These clips show recorded model runs at normal speed.
+The activity comes from the calculations. It is not measured in a living fly.
+
+### Simple · current app
+
+**3,745 cells · 435,997 connections**
+
+![Simple model: food drops, the smell circuit responds, and activity falls after the fly eats.](docs/media/brain-activity.gif)
+
+Each dot shows one cell's model value. Dot positions form a diagram.
+Food search and eating follow pet rules.
+[Read the guide and check the saved values.](docs/activity.md)
+
+### Full map · experimental preview
+
+**166,700 cells · 25,582,938 connections**
+
+![Full-map preview: food input changes calculated spikes across the mapped brain and nerve cord, with cell-class and feeding readouts.](docs/media/full-map-activity.gif)
+
+The view uses published cell-body positions. Brightness follows calculated spikes.
+The network includes the brain and nerve cord. Cells without positions still take part in the model.
+Movement toward food remains guided. Food use reads the MN9 feeding output.
+
+This is an experimental model of the mapped network, not a complete working fly.
+**Full map is a preview. It is not included in the current app download.**
+[Read the model notes and check the saved values.](docs/full-map-preview.md)
 
 ## Install
 

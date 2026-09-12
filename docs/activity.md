@@ -56,7 +56,8 @@ Read [the data notes](data.md) for the source, license, and limits.
 
 ## Check the GitHub clip
 
-The README shows a recorded run, not a live connection to your app.
+The README’s **Simple** clip shows a recorded run, not a live connection to your app.
+The separate [Full map preview](full-map-preview.md) uses a different experimental model.
 The recording uses the same model and drawing code as the app.
 It runs for 12 seconds at 20 frames per second. Playback uses normal speed.
 The fly sprite is enlarged. The clip uses a small test area and a fixed starting seed of 7.
