@@ -13,6 +13,10 @@ uint32_t FFCellCount(const FFBrain *brain);
 uint32_t FFConnectionCount(const FFBrain *brain);
 uint64_t FFContactCount(const FFBrain *brain);
 double FFTime(const FFBrain *brain);
+// Share the exact rounded coefficients with the graphics solver.
+float FFMembraneDecay(void);
+float FFSynapseDecay(void);
+float FFCoupling(void);
 // Advance one 100 ms sample. Stimulus rates are Poisson event rates in Hz.
 void FFAdvance(FFBrain *brain, const uint32_t *cells, const float *hz, uint32_t count);
 const float *FFRates(const FFBrain *brain);

@@ -7,5 +7,5 @@ let package = Package(name: "FruitflyBrainPreview", platforms: [.macOS(.v14)], p
     .target(name: "BrainKernel", publicHeadersPath: "include", cxxSettings: [.unsafeFlags(["-ffp-contract=off"])]),
     .target(name: "BrainCore", dependencies: ["BrainKernel"]),
     .executableTarget(name: "BrainPreview", dependencies: ["BrainCore"]),
-    .executableTarget(name: "BrainChecks", dependencies: ["BrainCore"])
+    .executableTarget(name: "BrainChecks", dependencies: ["BrainCore", "BrainKernel"])
 ], cxxLanguageStandard: .cxx17)

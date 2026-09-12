@@ -49,6 +49,9 @@ struct FFBrain {
 };
 static thread_local std::string lastError;
 extern "C" {
+float FFMembraneDecay(void) { return std::exp(-0.2f / 20.f); }
+float FFSynapseDecay(void) { return std::exp(-0.2f / 5.f); }
+float FFCoupling(void) { return (FFMembraneDecay() - FFSynapseDecay()) / 3.f; }
 const char *FFLastError(void) { return lastError.c_str(); }
 FFBrain *FFCreate(const char *path) {
     FFBrain *b = new FFBrain();

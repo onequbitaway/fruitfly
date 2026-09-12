@@ -1,3 +1,4 @@
+import BrainKernel
 import Foundation
 import Metal
 
@@ -101,12 +102,12 @@ final class MetalSolver {
         encoder.setBuffer(synapticDrive, offset: 0, index: 9)
         encoder.setBuffer(delayedCounts, offset: 0, index: 10)
         encoder.setBuffer(indirect, offset: 0, index: 11)
-        let membrane = exp(-Float(0.2) / 20)
-        let synapse = exp(-Float(0.2) / 5)
+        let membrane = FFMembraneDecay()
+        let synapse = FFSynapseDecay()
         for _ in 0..<500 {
             var p = Parameters(
                 n: UInt32(cells), m: UInt32(edges), tick: tick, seed: seed,
-                membrane: membrane, synapse: synapse, coupling: (membrane - synapse) / 3, weight: 0.275)
+                membrane: membrane, synapse: synapse, coupling: FFCoupling(), weight: 0.275)
             encoder.setBytes(&p, length: MemoryLayout<Parameters>.stride, index: 8)
             encoder.setComputePipelineState(prepare)
             encoder.dispatchThreads(

@@ -1,8 +1,11 @@
 import BrainCore
+import BrainKernel
 import Foundation
 
 let folder = URL(fileURLWithPath: CommandLine.arguments.count > 1 ? CommandLine.arguments[1] : "Data")
 var failures = 0
+print("Shared decay bits:", FFMembraneDecay().bitPattern, FFSynapseDecay().bitPattern, FFCoupling().bitPattern)
+print("Swift decay bits:", exp(-Float(0.2) / 20).bitPattern, exp(-Float(0.2) / 5).bitPattern)
 func check(_ pass: Bool, _ message: String) {
     if !pass {
         failures += 1
