@@ -66,6 +66,7 @@ public final class SmellCircuit {
     private var outputsLeft: [Int] = []
     private var outputsRight: [Int] = []
     private var inputs: [Int] = []
+    private var quiet = true
 
     public init(data: CircuitData) throws {
         try data.validate()
@@ -86,18 +87,23 @@ public final class SmellCircuit {
 
     public func step(left stimulusLeft: Double, right stimulusRight: Double, dt: Double) {
         guard dt.isFinite, dt > 0 else { return }
-        for i in drive.indices { drive[i] = 0 }
-        for e in weights.indices { drive[data.to[e]] += rates[data.from[e]] * weights[e] * 1.6 }
         let l = Float(bounded(stimulusLeft.isFinite ? stimulusLeft : 0, 0, 1))
         let r = Float(bounded(stimulusRight.isFinite ? stimulusRight : 0, 0, 1))
+        if quiet && l == 0 && r == 0 { return }
+        for i in drive.indices { drive[i] = 0 }
+        for e in weights.indices { drive[data.to[e]] += rates[data.from[e]] * weights[e] * 1.6 }
         for i in inputs {
             let input = data.sides[i] == -1 ? l : (data.sides[i] == 1 ? r : (l + r) / 2)
             drive[i] += input * 1.8
         }
         let alpha = Float(1 - exp(-min(dt, 0.1) / 0.08))
+        quiet = true
         for i in rates.indices {
             let target = tanh(max(0, drive[i] - 0.025))
             rates[i] += (target - rates[i]) * alpha
+            // Drop negligible residual activity so an idle circuit can sleep.
+            if rates[i] < 0.000001 { rates[i] = 0 }
+            if rates[i] > 0 { quiet = false }
         }
         left = mean(outputsLeft)
         right = mean(outputsRight)
@@ -106,6 +112,7 @@ public final class SmellCircuit {
     public func reset() {
         for i in rates.indices { rates[i] = 0 }
         left = 0; right = 0
+        quiet = true
     }
     private func mean(_ ids: [Int]) -> Double {
         guard !ids.isEmpty else { return 0 }

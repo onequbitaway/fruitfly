@@ -31,6 +31,7 @@ Read [data-provenance.json](data-provenance.json) for exact counts, source URLs,
 
 The app assigns a value between zero and one to each cell.
 This value represents modeled activity. It is not a measured firing rate.
+Values below 0.000001 are set to zero. An idle circuit stops its calculation until it receives new input.
 
 1. Food position determines the strength of the left and right smell inputs.
 2. The inputs enter the selected smell cells.

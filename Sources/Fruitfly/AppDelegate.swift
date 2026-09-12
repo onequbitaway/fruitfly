@@ -13,9 +13,7 @@ final class PetController: ObservableObject {
     @Published var stateName = "Exploring"
     @Published var meals = 0
     @Published var crumbCount = 0
-    @Published var activity: Double = 0
     @Published var placingFood = false
-    @Published var dataError = false
     private var timer: Timer?
     private var placementTimeout: Timer?
     private var globalMouseMonitor: Any?
@@ -32,7 +30,6 @@ final class PetController: ObservableObject {
         showBrain = UserDefaults.standard.bool(forKey: "showBrain")
         let circuit = try? SmellCircuit(data: CircuitData.bundled())
         world = FlyWorld(areas: Self.screenAreas(), seed: UInt64.random(in: 1...UInt64.max), circuit: circuit)
-        dataError = circuit == nil
         world.reducedMotion = NSWorkspace.shared.accessibilityDisplayShouldReduceMotion
     }
 
@@ -164,10 +161,10 @@ final class PetController: ObservableObject {
         if now - lastPublished > 0.3 { publishState(); lastPublished = now }
     }
     private func publishState() {
-        stateName = world.state.rawValue
-        meals = world.eaten
-        crumbCount = world.food.count
-        activity = world.circuit?.activity ?? 0
+        // Keep the control panel still when its displayed values do not change.
+        if stateName != world.state.rawValue { stateName = world.state.rawValue }
+        if meals != world.eaten { meals = world.eaten }
+        if crumbCount != world.food.count { crumbCount = world.food.count }
     }
     private func refreshAll() {
         for panel in panels {
