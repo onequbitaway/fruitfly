@@ -2,6 +2,18 @@ import AppKit
 import SwiftUI
 
 enum PreviewRenderer {
+    static func saveView(_ view: NSView, to path: String) throws {
+        view.layoutSubtreeIfNeeded()
+        guard let bitmap = view.bitmapImageRepForCachingDisplay(in: view.bounds) else {
+            throw NSError(domain: "Fruitfly.Preview", code: 1)
+        }
+        view.cacheDisplay(in: view.bounds, to: bitmap)
+        guard let png = bitmap.representation(using: .png, properties: [:]) else {
+            throw NSError(domain: "Fruitfly.Preview", code: 2)
+        }
+        try png.write(to: URL(fileURLWithPath: path))
+    }
+
     static func saveIcon(to directory: String) throws {
         let folder = URL(fileURLWithPath: directory)
         try FileManager.default.createDirectory(at: folder, withIntermediateDirectories: true)

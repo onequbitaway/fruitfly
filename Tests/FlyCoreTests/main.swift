@@ -21,6 +21,13 @@ func expectAtMost<T: Comparable>(_ a: T, _ b: T, file: StaticString = #fileID, l
     expect(a <= b, "Value is too large", file: file, line: line)
 }
 
+if let i = CommandLine.arguments.firstIndex(of: "--verify-recording"), i + 2 < CommandLine.arguments.count {
+    do { try verifyRecording(rawPath: CommandLine.arguments[i + 1], mediaPath: CommandLine.arguments[i + 2]) }
+    catch { failures += 1; print("FAIL recording: \(error)") }
+    exit(failures == 0 ? 0 : 1)
+}
+
+let activity = ActivityTests()
 let world = FlyWorldTests()
 let circuit = CircuitTests()
 var cases: [(String, () throws -> Void)] = [
@@ -37,6 +44,9 @@ if !CommandLine.arguments.contains("--world-only") {
         ("Bundled brain data", circuit.testBundledDataHasRealIDsAndBothSides),
         ("Circuit response", circuit.testStimulusReachesOutputCellsThroughConnections),
         ("Circuit changes movement", circuit.testCircuitChangesPetMovement),
+        ("Activity reads actual cells", activity.testReadingUsesActualCellsWithoutChangingTheModel),
+        ("Paused activity and reset", activity.testPauseHoldsHistoryAndResetStartsAgain),
+        ("Cell and connection identity", activity.testLayoutKeepsSourceCellAndConnectionIdentity),
     ]
 }
 for (name, run) in cases {

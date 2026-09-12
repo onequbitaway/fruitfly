@@ -18,6 +18,8 @@ jobs:
         run: test "$RELEASE_TAG" = "v$(cat VERSION)"
       - name: Build for both Mac types
         run: swift run -c release FlyChecks && ./scripts/build.sh --universal
+      - name: Check every cell in the public recording
+        run: make check-demo
       - name: Check the packaged app
         run: dist/Fruitfly.app/Contents/MacOS/Fruitfly --smoke-test
       - name: Publish the download

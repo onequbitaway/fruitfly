@@ -26,7 +26,6 @@ final class DesktopView: NSView {
     let world: FlyWorld
     let origin: CGPoint
     var size: Double = 1.3
-    var showBrain = false
     var placingFood = false
     var onPlaceFood: ((Point) -> Void)?
     var onCancel: (() -> Void)?
@@ -46,8 +45,7 @@ final class DesktopView: NSView {
     func refresh() {
         let point = local(world.position)
         let radius = 32 * size
-        var rect = CGRect(x: point.x - radius, y: point.y - radius, width: radius * 2, height: radius * 2)
-        if showBrain { rect = rect.union(brainRect(at: point)) }
+        let rect = CGRect(x: point.x - radius, y: point.y - radius, width: radius * 2, height: radius * 2)
         setNeedsDisplay(lastFlyRect.union(rect))
         lastFlyRect = rect
         for r in lastFoodRects { setNeedsDisplay(r) }
@@ -78,31 +76,6 @@ final class DesktopView: NSView {
             FlyPainter.draw(in: ctx, at: point, heading: world.heading, time: world.time, scale: size,
                             flying: world.state != .resting && world.state != .eating,
                             eating: world.state == .eating)
-            if showBrain { drawBrain(in: ctx, at: point) }
-        }
-    }
-
-    private func brainRect(at p: CGPoint) -> CGRect {
-        let x = min(bounds.maxX - 174, max(8, p.x + 27))
-        let y = min(bounds.maxY - 65, max(8, p.y - 65))
-        return CGRect(x: x, y: y, width: 166, height: 58)
-    }
-
-    private func drawBrain(in ctx: CGContext, at p: CGPoint) {
-        let box = brainRect(at: p)
-        NSColor(white: 0.12, alpha: 0.92).setFill()
-        NSBezierPath(roundedRect: box, xRadius: 12, yRadius: 12).fill()
-        let title = world.circuit == nil ? "Brain data unavailable" : "Smell circuit"
-        (title as NSString).draw(at: NSPoint(x: box.minX + 12, y: box.minY + 34), withAttributes: [
-            .font: NSFont.systemFont(ofSize: 11, weight: .medium), .foregroundColor: NSColor.white
-        ])
-        guard let circuit = world.circuit else { return }
-        for i in 0..<22 {
-            let index = i * circuit.rates.count / 22
-            let rate = CGFloat(circuit.rates[index])
-            let height = 3 + rate * 14
-            ctx.setFillColor(NSColor(red: 0.45 + 0.35 * rate, green: 0.62 + 0.25 * rate, blue: 1, alpha: 0.5 + 0.5 * rate).cgColor)
-            ctx.fill(CGRect(x: box.minX + 12 + Double(i) * 6.5, y: box.minY + 11, width: 3.5, height: height))
         }
     }
 

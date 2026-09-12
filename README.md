@@ -5,7 +5,12 @@ A small pet fly for your Mac desktop.
 The fly moves above your apps. Drop food and watch it land and eat.
 Move the pointer quickly near the fly to make it move away.
 
-![Fruitfly and its controls. The fly is enlarged.](docs/preview.png)
+![A recorded model run. Food appears, cell values rise, and activity falls after the fly eats.](docs/media/brain-activity.gif)
+
+**Real connections. Live model values.**
+The clip replays the app's model at normal speed. Each dot shows one of the 3,745 included cells.
+The values come from the simulation. They are not recordings from a living fly.
+[See how it works and check the saved values.](docs/activity.md)
 
 **[Download for Mac](https://github.com/onequbitaway/fruitfly/releases/latest)**
 
@@ -51,7 +56,7 @@ Normal clicks pass through the fly to your other apps.
 | --- | --- |
 | Place food | Select a location for a crumb. |
 | Fly size | Make the fly smaller or larger. |
-| Show brain activity | Show activity from selected cells beside the fly. |
+| Show brain activity | Open a live view of all 3,745 included cells. |
 | Pause / Resume | Stop or continue the fly and food. |
 | Hide fly / Show fly | Hide or show the fly and its food. |
 | Bring fly here | Move the fly to the center of the current screen. |
@@ -61,6 +66,20 @@ Normal clicks pass through the fly to your other apps.
 The fly stays on one screen. Use **Bring fly here** to move it to another screen.
 The app limits food to 12 crumbs. Uneaten crumbs expire after three minutes of active use.
 The app stops while the screen sleeps. It uses slower movement when Reduce Motion is on.
+
+## Watch the activity
+
+1. Click the fly icon in the menu bar.
+2. Turn on **Show brain activity**.
+3. Click **Drop food nearby** in the new window.
+
+Dots get brighter as their model values rise.
+The chart shows food input and circuit output over the last ten seconds.
+Click **Pause** to hold the fly and the values. Click **Resume** to continue.
+
+Dot positions are a diagram. They do not show the cells' positions in a real brain.
+The lines show 600 selected connections from the included data.
+Read [the activity guide](docs/activity.md) for the scale and recording checks.
 
 ## Build and start the app
 

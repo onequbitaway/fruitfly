@@ -58,6 +58,10 @@ public final class SmellCircuit {
     public private(set) var rates: [Float]
     public private(set) var left: Double = 0
     public private(set) var right: Double = 0
+    public private(set) var inputLeft: Double = 0
+    public private(set) var inputRight: Double = 0
+    public private(set) var stepCount: UInt64 = 0
+    public private(set) var elapsedTime: Double = 0
     public var activity: Double { (left + right) / 2 }
     public var neuronCount: Int { data.ids.count }
     public var connectionCount: Int { data.from.count }
@@ -89,6 +93,9 @@ public final class SmellCircuit {
         guard dt.isFinite, dt > 0 else { return }
         let l = Float(bounded(stimulusLeft.isFinite ? stimulusLeft : 0, 0, 1))
         let r = Float(bounded(stimulusRight.isFinite ? stimulusRight : 0, 0, 1))
+        inputLeft = Double(l); inputRight = Double(r)
+        stepCount &+= 1
+        elapsedTime += min(dt, 0.1)
         if quiet && l == 0 && r == 0 { return }
         for i in drive.indices { drive[i] = 0 }
         for e in weights.indices { drive[data.to[e]] += rates[data.from[e]] * weights[e] * 1.6 }
@@ -112,6 +119,8 @@ public final class SmellCircuit {
     public func reset() {
         for i in rates.indices { rates[i] = 0 }
         left = 0; right = 0
+        inputLeft = 0; inputRight = 0
+        stepCount = 0; elapsedTime = 0
         quiet = true
     }
     private func mean(_ ids: [Int]) -> Double {

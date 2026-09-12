@@ -23,6 +23,8 @@ jobs:
         run: swift run -c release FlyChecks
       - name: Build the app
         run: ./scripts/build.sh
+      - name: Check every cell in the public recording
+        run: make check-demo
       - name: Check the packaged app
         run: dist/Fruitfly.app/Contents/MacOS/Fruitfly --smoke-test
       - uses: actions/upload-artifact@v4

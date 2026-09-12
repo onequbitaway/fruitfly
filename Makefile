@@ -1,4 +1,4 @@
-.PHONY: build run release test
+.PHONY: build run release test demo check-demo
 
 build:
 	./scripts/build.sh
@@ -11,3 +11,9 @@ release:
 
 test:
 	swift run -c release FlyChecks
+
+demo:
+	./scripts/record-demo.sh
+
+check-demo:
+	./scripts/check-demo.sh

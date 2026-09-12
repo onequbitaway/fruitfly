@@ -40,6 +40,7 @@ struct ControlPanel: View {
                     .font(.system(size: 11)).monospacedDigit().frame(width: 34, alignment: .trailing)
             }
             Toggle("Show brain activity", isOn: $controller.showBrain)
+                .disabled(controller.world.circuit == nil)
                 .toggleStyle(.switch).controlSize(.small).font(.system(size: 12)).tint(blue)
             HStack(spacing: 8) {
                 Button { controller.paused.toggle() } label: {
@@ -69,6 +70,7 @@ struct ControlPanel: View {
                 VStack(alignment: .leading, spacing: 8) {
                     if let circuit = controller.world.circuit {
                         Text("A small smell circuit uses \(circuit.neuronCount.formatted()) cells from the MaleCNS fly brain map.")
+                        Text("The brain view shows live model values. Each dot is one cell. Dot positions do not show anatomy.")
                         Text("The circuit changes speed and turns. Food search, rest, and eating use programmed rules.")
                     } else {
                         Text("Brain data is missing. Movement uses programmed rules. Download a fresh copy to restore the data.")

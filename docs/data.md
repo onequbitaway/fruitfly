@@ -56,7 +56,8 @@ It does not provide a complete working brain or a record of learned behavior.
 The app includes only a selected smell circuit. Connections to all other cells are excluded.
 Food search, landing, eating, rest, and pointer reactions use programmed rules.
 The fly does not learn. Tests check software behavior; they do not prove biological accuracy.
-The brain view shows sampled values from the model. It does not show every cell or its anatomy.
+The brain view shows values from all 3,745 included cells. Dot positions do not show anatomy.
+Read [the activity guide](activity.md) for display scales and recording checks.
 
 ## Rebuild the included data
 

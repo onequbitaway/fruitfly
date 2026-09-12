@@ -5,10 +5,11 @@ import FlyCore
 final class PetController: ObservableObject {
     let world: FlyWorld
     var panels: [DesktopPanel] = []
+    private(set) var brainPanel: BrainPanel?
     var dismissControls: (() -> Void)?
-    @Published var paused = false { didSet { world.paused = paused } }
+    @Published var paused = false { didSet { world.paused = paused; brainPanel?.activityView.refresh(paused: paused) } }
     @Published var hidden = false { didSet { updateVisibility() } }
-    @Published var showBrain: Bool { didSet { UserDefaults.standard.set(showBrain, forKey: "showBrain"); refreshAll() } }
+    @Published var showBrain: Bool { didSet { UserDefaults.standard.set(showBrain, forKey: "showBrain"); updateBrainVisibility() } }
     @Published var size: Double { didSet { UserDefaults.standard.set(size, forKey: "flySize"); refreshAll() } }
     @Published var stateName = "Exploring"
     @Published var meals = 0
@@ -42,6 +43,7 @@ final class PetController: ObservableObject {
 
     func start() {
         rebuildPanels()
+        updateBrainVisibility()
         // Mouse-only monitors do not ask for access to keyboard input.
         globalMouseMonitor = NSEvent.addGlobalMonitorForEvents(matching: .leftMouseDown) { [weak self] event in
             self?.handleFoodShortcut(event)
@@ -75,6 +77,9 @@ final class PetController: ObservableObject {
         NSWorkspace.shared.notificationCenter.removeObserver(self)
         for panel in panels { panel.close() }
         panels.removeAll()
+        brainPanel?.onClose = nil
+        brainPanel?.orderOut(nil)
+        brainPanel = nil
     }
 
     func placeFood() {
@@ -158,6 +163,7 @@ final class PetController: ObservableObject {
         let mouse = NSEvent.mouseLocation
         world.step(dt: dt, cursor: placingFood ? nil : Point(mouse.x, mouse.y))
         if !paused { for panel in panels { (panel.contentView as? DesktopView)?.refresh() } }
+        if brainPanel?.isVisible == true { brainPanel?.activityView.refresh(paused: paused) }
         if now - lastPublished > 0.3 { publishState(); lastPublished = now }
     }
     private func publishState() {
@@ -169,16 +175,31 @@ final class PetController: ObservableObject {
     private func refreshAll() {
         for panel in panels {
             if let view = panel.contentView as? DesktopView {
-                view.size = size; view.showBrain = showBrain
+                view.size = size
                 view.needsDisplay = true
             }
         }
     }
     private func updateVisibility() {
+        updateBrainVisibility()
         if hidden { endPlacement() }
         for panel in panels {
             if hidden { panel.orderOut(nil) } else { panel.orderFrontRegardless() }
         }
+    }
+    private func updateBrainVisibility() {
+        guard showBrain, !hidden, let circuit = world.circuit else {
+            brainPanel?.orderOut(nil); return
+        }
+        if brainPanel == nil {
+            let panel = BrainPanel(circuit: circuit)
+            panel.onClose = { [weak self] in self?.showBrain = false }
+            panel.activityView.onFood = { [weak self] in self?.dropNearby() }
+            panel.activityView.onPause = { [weak self] in self?.paused.toggle() }
+            brainPanel = panel
+        }
+        brainPanel?.activityView.refresh(paused: paused)
+        brainPanel?.orderFrontRegardless()
     }
     private func rebuildPanels() {
         endPlacement()
@@ -187,7 +208,7 @@ final class PetController: ObservableObject {
         panels = NSScreen.screens.map { screen in
             let panel = DesktopPanel(screen: screen, world: world)
             if let view = panel.contentView as? DesktopView {
-                view.size = size; view.showBrain = showBrain
+                view.size = size
                 view.onPlaceFood = { [weak self] point in
                     self?.world.dropFood(at: point)
                     self?.endPlacement()
@@ -242,7 +263,10 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
             }
         }
         controller.start()
+        if CommandLine.arguments.contains("--show-brain") { controller.showBrain = true }
         if CommandLine.arguments.contains("--smoke-test") {
+            let savedBrain = controller.showBrain
+            controller.showBrain = true
             controller.dropNearby()
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 var valid = !controller.panels.isEmpty && controller.panels.allSatisfy { $0.ignoresMouseEvents }
@@ -262,7 +286,30 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
                 controller.placeFood()
                 controller.endPlacement()
                 valid = valid && controller.panels.allSatisfy { $0.ignoresMouseEvents }
+                valid = valid && controller.brainPanel?.isVisible == true
+                if let model = controller.world.circuit, let view = controller.brainPanel?.activityView {
+                    let buttons = view.subviews.compactMap { $0 as? NSButton }
+                    let foodBefore = controller.world.food.count
+                    buttons.first { $0.title == "Drop food nearby" }?.performClick(nil)
+                    valid = valid && controller.world.food.count == foodBefore + 1
+                    buttons.first { $0.title == "Pause" }?.performClick(nil)
+                    valid = valid && controller.paused
+                    let step = model.stepCount
+                    let rates = view.reading.rates
+                    controller.world.step(dt: 0.05)
+                    view.refresh(paused: true)
+                    valid = valid && rates == model.rates && view.reading.rates == rates && step == model.stepCount
+                    if let i = CommandLine.arguments.firstIndex(of: "--brain-preview"), i + 1 < CommandLine.arguments.count {
+                        do { try PreviewRenderer.saveView(view, to: CommandLine.arguments[i + 1]) }
+                        catch { valid = false; fputs("Brain preview failed: \(error)\n", stderr) }
+                    }
+                    controller.brainPanel?.performClose(nil)
+                    valid = valid && !controller.showBrain && controller.brainPanel?.isVisible == false
+                } else { valid = false }
+                controller.showBrain = true
                 controller.hidden = true
+                valid = valid && controller.brainPanel?.isVisible == false
+                controller.showBrain = savedBrain
                 valid = valid && controller.panels.allSatisfy { !$0.isVisible }
                 print("App check: \(valid ? "passed" : "failed"); screens: \(controller.panels.count); cells: \(controller.world.circuit?.neuronCount ?? 0)")
                 controller.stop()

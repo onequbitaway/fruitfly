@@ -19,7 +19,8 @@ Run the app check after a build:
 dist/Fruitfly.app/Contents/MacOS/Fruitfly --smoke-test
 ```
 
-This check opens the app briefly. It checks food placement, click handling, the data, and hiding.
+This check opens the app briefly. It checks food placement, click handling, the data, hiding, and the live brain window.
+It also checks that pause holds the displayed cell values.
 It uses events inside the app. It does not click another app.
 
 To render a preview of the app's own controls, run:
@@ -35,6 +36,9 @@ dist/Fruitfly.app/Contents/MacOS/Fruitfly --render-preview /tmp/fruitfly-preview
 - Press Esc during food placement. Make sure normal clicks work again.
 - Hold Option and double-click. Make sure one crumb appears.
 - Pause the fly. Make sure food does not disappear during the pause.
+- Open the brain view. Drop food nearby. Make sure cell values and the chart change.
+- Pause in the brain view. Make sure the chart and values stop.
+- Close the brain view. Make sure its menu switch turns off.
 - Hide the fly. Make sure the food is also hidden.
 - Check the app with dark and light appearance settings.
 - Check another display, a full-screen app, and a Space change.
@@ -42,6 +46,14 @@ dist/Fruitfly.app/Contents/MacOS/Fruitfly --render-preview /tmp/fruitfly-preview
 
 Full-screen apps can cover floating windows on some macOS versions.
 The overlay does not read other window contents or attach the fly to their borders.
+
+## Record the activity example
+
+Run `make demo` to render the README animation and save every cell value.
+Run `make check-demo` to replay the saved run and check it against the model.
+No desktop recording or video package is required.
+See [the activity guide](activity.md) for the file format and checks.
+Keep the recording in sync when you change the model or its drawing code.
 
 ## Release
 

@@ -1,0 +1,31 @@
+{
+  "cellCount" : 3745,
+  "cellOrder" : "ids array in Sources/FlyCore/Resources/smell-circuit.json",
+  "colors" : "Fixed 0 to 1 scale. 16 levels: floor(rate * 15). No changing gain.",
+  "connections" : "600 strongest retained connections between different cell classes. Opacity uses the source cell value.",
+  "description" : "Recorded model run. Values are simulated, not measured in a living fly.",
+  "fileSHA256" : {
+    "activity-frames.json" : "d4f6063c08ff68379321f8c59adb103f26a5be56cffce9ff192d4d3f29cd7545",
+    "brain-activity.gif" : "65c8dfbca0aa64c40f167e66a3306126ca51d636b8f8ca6c6beb8730dba910c9",
+    "cell-activity.f32" : "d45e4cc6e157bbad7ea0619f8489ccd9aa6ca46914e126dfb336415cbc7792dd"
+  },
+  "foodAtSeconds" : 1.5,
+  "fps" : 20,
+  "frames" : 240,
+  "height" : 640,
+  "playbackSpeed" : 1,
+  "positions" : "Schematic. Not anatomical coordinates.",
+  "rateFormat" : "IEEE 754 float32, little endian, frame then cell",
+  "seed" : 7,
+  "sourceSHA256" : {
+    "Sources/FlyCore/ActivityReading.swift" : "20873b0c9e74950463602483fcd907f4625e72d7e6a16c0092bb608e69d7dcf4",
+    "Sources/FlyCore/FlyWorld.swift" : "ed3544df3faab8511a335f546be937de251db74ed73a2267e1baf5ac62b0cded",
+    "Sources/FlyCore/Geometry.swift" : "d78e243597dee550d01f0df8dae831245791409161c5e15755466b704d3718d5",
+    "Sources/FlyCore/Resources/smell-circuit.json" : "9e00b59098174bc9f8c0cc203780efec86bb5bbbdb48a2a551f496b98341e5be",
+    "Sources/FlyCore/SmellCircuit.swift" : "ac3099cd6493ba288efe54fc930e35a22a48830b3ec45af7a0c30e8b9c2c88a6",
+    "Sources/Fruitfly/ActivityPainter.swift" : "db8fd693d1bb62c39421b3dbdbb78094072c06fba164d80ff3115973e46463ef",
+    "Sources/Fruitfly/ActivityRecorder.swift" : "71683ba0e94477e393ce9dbc2a498a4b49ccaab1296c3497a4885560510aefe7",
+    "Sources/Fruitfly/FlyPainter.swift" : "2d05717b6b17787cc4a00bf337f79cecdd6b5554bb565e65bdfafbc87e14eb8d"
+  },
+  "width" : 1000
+}
