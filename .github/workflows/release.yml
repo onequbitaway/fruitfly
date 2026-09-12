@@ -17,7 +17,9 @@ jobs:
           RELEASE_TAG: ${{ github.ref_name }}
         run: test "$RELEASE_TAG" = "v$(cat VERSION)"
       - name: Build for both Mac types
-        run: ./scripts/build.sh --universal
+        run: swift run -c release FlyChecks && ./scripts/build.sh --universal
+      - name: Check the packaged app
+        run: dist/Fruitfly.app/Contents/MacOS/Fruitfly --smoke-test
       - name: Publish the download
         env:
           GH_TOKEN: ${{ github.token }}

@@ -1,0 +1,51 @@
+{
+  "dataset": "MaleCNS v1.0",
+  "source": "https://male-cns.janelia.org/download/",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "selection": "All non-glial entries with class olfactory, ALPN, or ALLN; all released positive-weight edges with both endpoints retained. No added edges.",
+  "classes": {
+    "ALPN": 686,
+    "ALLN": 420,
+    "olfactory": 2639
+  },
+  "cells": 3745,
+  "directed_connections": 435997,
+  "synaptic_contacts": 3213028,
+  "unknown_side_cells": 413,
+  "missing_transmitter_cells": 0,
+  "transmitters": {
+    "acetylcholine": 3245,
+    "unclear": 67,
+    "gaba": 324,
+    "glutamate": 107,
+    "octopamine": 2
+  },
+  "model_assumptions": [
+    "rootSide takes precedence over somaSide; unknown side receives the mean input.",
+    "GABA and glutamate are assigned an inhibitory sign. All other or missing transmitter types are assigned an excitatory sign. Receptors are not modeled.",
+    "Runtime weights are divided by each target's retained incoming contact count.",
+    "Sensory input, rate dynamics, bilateral output averages, and desktop movement mappings are engineered. This is not learned food-seeking or a whole-brain emulation."
+  ],
+  "inputs": {
+    "annotations.feather": {
+      "url": "https://storage.googleapis.com/flyem-male-cns/v1.0/connectome-data/flat-connectome/body-annotations-male-cns-v1.0-minconf-0.5.feather",
+      "sha256": "2177e246113e4cfbf1e7772ec37c6da1955ff22e8063d0b1f833101f99a9a3b2",
+      "bytes": 14483314
+    },
+    "neurotransmitters.feather": {
+      "url": "https://storage.googleapis.com/flyem-male-cns/v1.0/connectome-data/flat-connectome/body-neurotransmitters-male-cns-v1.0.feather",
+      "sha256": "95c9289220663abeb3409f3ad9e5a7f8a53f8093f5139d15502cd08da8879621",
+      "bytes": 43282834
+    },
+    "edges.feather": {
+      "url": "https://storage.googleapis.com/flyem-male-cns/v1.0/connectome-data/flat-connectome/connectome-weights-male-cns-v1.0-minconf-0.5.feather",
+      "sha256": "e35da783d1c686b2b58b3b87cd6a403ae43bfcfba8bff28e08ef752c1a56afc1",
+      "bytes": 1051241946
+    }
+  },
+  "output": {
+    "path": "Sources/FlyCore/Resources/smell-circuit.json",
+    "sha256": "9e00b59098174bc9f8c0cc203780efec86bb5bbbdb48a2a551f496b98341e5be",
+    "bytes": 4842802
+  }
+}

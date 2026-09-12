@@ -6,6 +6,8 @@ let package = Package(
     platforms: [.macOS(.v14)],
     products: [.executable(name: "Fruitfly", targets: ["Fruitfly"])],
     targets: [
-        .executableTarget(name: "Fruitfly")
+        .target(name: "FlyCore", resources: [.process("Resources")]),
+        .executableTarget(name: "Fruitfly", dependencies: ["FlyCore"]),
+        .executableTarget(name: "FlyChecks", dependencies: ["FlyCore"], path: "Tests/FlyCoreTests")
     ]
 )

@@ -39,6 +39,9 @@ else
   lipo -create "${binaries[@]}" -output "$app/Contents/MacOS/Fruitfly"
 fi
 strip -x "$app/Contents/MacOS/Fruitfly"
+for bundle in "$bin_path"/*.bundle; do
+  if [[ -d "$bundle" ]]; then cp -R "$bundle" "$app/Contents/Resources/"; fi
+done
 
 cat > "$app/Contents/Info.plist" <<PLIST
 <?xml version="1.0" encoding="UTF-8"?>
@@ -48,6 +51,7 @@ cat > "$app/Contents/Info.plist" <<PLIST
 <key>CFBundleDisplayName</key><string>Fruitfly</string>
 <key>CFBundleIdentifier</key><string>io.github.onequbitaway.fruitfly</string>
 <key>CFBundleExecutable</key><string>Fruitfly</string>
+<key>CFBundleIconFile</key><string>Fruitfly</string>
 <key>CFBundlePackageType</key><string>APPL</string>
 <key>CFBundleShortVersionString</key><string>$version</string>
 <key>CFBundleVersion</key><string>$version</string>
@@ -57,6 +61,10 @@ cat > "$app/Contents/Info.plist" <<PLIST
 </dict></plist>
 PLIST
 cp LICENSE "$app/Contents/Resources/LICENSE.txt"
+cp docs/data.md "$app/Contents/Resources/Data-sources.txt"
+if [[ -f docs/data-provenance.json ]]; then cp docs/data-provenance.json "$app/Contents/Resources/"; fi
+"$app/Contents/MacOS/Fruitfly" --export-icon "$stage/Fruitfly.iconset"
+iconutil -c icns "$stage/Fruitfly.iconset" -o "$app/Contents/Resources/Fruitfly.icns"
 codesign --force --sign - "$app"
 codesign --verify --deep --strict "$app"
 plutil -lint "$app/Contents/Info.plist"
@@ -65,6 +73,6 @@ if [[ -d dist/Fruitfly.app ]]; then rm -rf dist/Fruitfly.app; fi
 mv "$app" dist/Fruitfly.app
 archive="dist/Fruitfly-$version-macos-$label.zip"
 ditto -c -k --keepParent dist/Fruitfly.app "$archive"
-shasum -a 256 "$archive" > "$archive.sha256"
+(cd dist && shasum -a 256 "$(basename "$archive")" > "$(basename "$archive").sha256")
 echo "Built $archive"
 echo "Start the app: open dist/Fruitfly.app"

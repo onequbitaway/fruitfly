@@ -1,0 +1,2 @@
+Fruitfly uses a selected part of the MaleCNS v1.0 dataset.
+See docs/data.md for the source, license, and changes.

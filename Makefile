@@ -10,4 +10,4 @@ release:
 	./scripts/build.sh --universal
 
 test:
-	swift test
+	swift run -c release FlyChecks

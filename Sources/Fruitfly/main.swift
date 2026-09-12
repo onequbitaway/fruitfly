@@ -1,22 +1,11 @@
 import AppKit
 
-final class AppDelegate: NSObject, NSApplicationDelegate {
-    private var statusItem: NSStatusItem?
-
-    func applicationDidFinishLaunching(_ notification: Notification) {
-        NSApp.setActivationPolicy(.accessory)
-        let item = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
-        item.button?.title = "Fruitfly"
-        let menu = NSMenu()
-        menu.addItem(withTitle: "Fruitfly is ready", action: nil, keyEquivalent: "")
-        menu.addItem(.separator())
-        menu.addItem(withTitle: "Quit Fruitfly", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q")
-        item.menu = menu
-        statusItem = item
-    }
-}
-
 let app = NSApplication.shared
+if let i = CommandLine.arguments.firstIndex(of: "--export-icon"), i + 1 < CommandLine.arguments.count {
+    do { try PreviewRenderer.saveIcon(to: CommandLine.arguments[i + 1]) }
+    catch { fputs("Icon failed: \(error)\n", stderr); exit(1) }
+    exit(0)
+}
 let delegate = AppDelegate()
 app.delegate = delegate
 app.run()
