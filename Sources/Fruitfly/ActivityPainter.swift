@@ -1,8 +1,17 @@
 import AppKit
+import CoreText
 import FlyCore
 
 /// Used by the live window and the public recording. Drawing reads model values only.
 enum ActivityPainter {
+    private struct TextKey: Hashable {
+        let string: String
+        let size: CGFloat
+        let weight: CGFloat
+        let color: NSColor
+        let mono: Bool
+    }
+    private static var textLines: [TextKey: (CTLine, CGFloat)] = [:]
     static let background = NSColor(red: 0.043, green: 0.082, blue: 0.14, alpha: 1)
     static let foreground = NSColor(red: 0.89, green: 0.94, blue: 0.99, alpha: 1)
     static let secondary = NSColor(red: 0.53, green: 0.64, blue: 0.75, alpha: 1)
@@ -13,7 +22,7 @@ enum ActivityPainter {
     ]
 
     static func draw(in ctx: CGContext, rect: CGRect, data: CircuitData, layout: ActivityLayout,
-                     reading: ActivityReading, history: ActivityHistory, mode: String) {
+                     reading: ActivityReading, history: ActivityHistory, mode: String, cellCache: ActivityCellCache? = nil) {
         ctx.saveGState()
         ctx.clip(to: rect)
         ctx.translateBy(x: rect.minX, y: rect.minY)
@@ -36,7 +45,11 @@ enum ActivityPainter {
         }
 
         let graph = CGRect(x: 24, y: 191, width: w - 48, height: max(110, h - 300))
-        drawCells(in: ctx, rect: graph, data: data, layout: layout, reading: reading)
+        if let cellCache {
+            cellCache.draw(in: ctx, rect: graph, data: data, layout: layout, reading: reading)
+        } else {
+            drawCells(in: ctx, rect: graph, data: data, layout: layout, reading: reading)
+        }
 
         text("\(reading.activeCells.formatted()) cells above 0.01", at: CGPoint(x: 25, y: 163), size: 11, color: secondary)
         text("Model value", at: CGPoint(x: w - 180, y: 163), size: 10, color: secondary)
@@ -128,7 +141,51 @@ enum ActivityPainter {
 
     static func text(_ string: String, at point: CGPoint, size: CGFloat,
                      weight: NSFont.Weight = .regular, color: NSColor = foreground, mono: Bool = false) {
-        let font = mono ? NSFont.monospacedDigitSystemFont(ofSize: size, weight: weight) : NSFont.systemFont(ofSize: size, weight: weight)
-        (string as NSString).draw(at: point, withAttributes: [.font: font, .foregroundColor: color])
+        guard let ctx = NSGraphicsContext.current?.cgContext else { return }
+        let key = TextKey(string: string, size: size, weight: weight.rawValue, color: color, mono: mono)
+        let entry: (CTLine, CGFloat)
+        if let saved = textLines[key] { entry = saved }
+        else {
+            let font = mono ? NSFont.monospacedDigitSystemFont(ofSize: size, weight: weight) : NSFont.systemFont(ofSize: size, weight: weight)
+            let attributes: [NSAttributedString.Key: Any] = [
+                .font: font, NSAttributedString.Key(kCTForegroundColorAttributeName as String): color.cgColor
+            ]
+            entry = (CTLineCreateWithAttributedString(NSAttributedString(string: string, attributes: attributes)), -font.descender)
+            // Bound memory as the model clock adds new labels.
+            if textLines.count >= 512 { textLines.removeAll(keepingCapacity: true) }
+            textLines[key] = entry
+        }
+        ctx.saveGState()
+        ctx.textMatrix = .identity
+        ctx.textPosition = CGPoint(x: point.x, y: point.y + entry.1)
+        CTLineDraw(entry.0, ctx)
+        ctx.restoreGState()
+    }
+}
+
+/// Reuse the cell picture only when every model value and the view size match.
+/// The live clock and history still draw from the latest completed step.
+final class ActivityCellCache {
+    private var rates: [Float] = []
+    private var size = CGSize.zero
+    private var scale: CGFloat = 0
+    private var image: CGImage?
+
+    func draw(in ctx: CGContext, rect: CGRect, data: CircuitData, layout: ActivityLayout, reading: ActivityReading) {
+        let pixelScale = max(1, abs(ctx.ctm.a))
+        if image == nil || size != rect.size || scale != pixelScale || rates != reading.rates {
+            let width = Int(ceil(rect.width * pixelScale)), height = Int(ceil(rect.height * pixelScale))
+            if let buffer = CGContext(data: nil, width: width, height: height, bitsPerComponent: 8,
+                                      bytesPerRow: width * 4, space: CGColorSpaceCreateDeviceRGB(),
+                                      bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue) {
+                buffer.scaleBy(x: pixelScale, y: pixelScale)
+                ActivityPainter.drawCells(in: buffer, rect: CGRect(origin: .zero, size: rect.size),
+                                          data: data, layout: layout, reading: reading)
+                image = buffer.makeImage()
+                rates = reading.rates; size = rect.size; scale = pixelScale
+            } else { image = nil }
+        }
+        if let image { ctx.draw(image, in: rect) }
+        else { ActivityPainter.drawCells(in: ctx, rect: rect, data: data, layout: layout, reading: reading) }
     }
 }

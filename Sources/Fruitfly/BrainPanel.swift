@@ -30,6 +30,7 @@ final class BrainActivityView: NSView {
     private let circuit: SmellCircuit
     private let cellLayout: ActivityLayout
     private let history = ActivityHistory()
+    private let cellCache = ActivityCellCache()
     private(set) var reading: ActivityReading
     private var paused = false
     private let foodButton = NSButton(title: "Drop food nearby", target: nil, action: nil)
@@ -74,7 +75,7 @@ final class BrainActivityView: NSView {
         ctx.setFillColor(ActivityPainter.background.cgColor); ctx.fill(bounds)
         ActivityPainter.draw(in: ctx, rect: CGRect(x: 0, y: 46, width: bounds.width, height: bounds.height - 46),
                              data: circuit.data, layout: cellLayout, reading: reading, history: history,
-                             mode: paused ? "Paused model · values held" : "Live model · food changes the input")
+                             mode: paused ? "Paused model · values held" : "Live model · food changes the input", cellCache: cellCache)
     }
     @objc private func dropFood() { onFood?() }
     @objc private func togglePause() { onPause?() }

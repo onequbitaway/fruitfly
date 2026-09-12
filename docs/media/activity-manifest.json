@@ -6,7 +6,7 @@
   "description" : "Recorded model run. Values are simulated, not measured in a living fly.",
   "fileSHA256" : {
     "activity-frames.json" : "d4f6063c08ff68379321f8c59adb103f26a5be56cffce9ff192d4d3f29cd7545",
-    "brain-activity.gif" : "65c8dfbca0aa64c40f167e66a3306126ca51d636b8f8ca6c6beb8730dba910c9",
+    "brain-activity.gif" : "a5a49d1a2e54d8687d5779329a1ffdd865ee88632c574753670387b0731eb7ac",
     "cell-activity.f32" : "d45e4cc6e157bbad7ea0619f8489ccd9aa6ca46914e126dfb336415cbc7792dd"
   },
   "foodAtSeconds" : 1.5,
@@ -23,7 +23,7 @@
     "Sources/FlyCore/Geometry.swift" : "d78e243597dee550d01f0df8dae831245791409161c5e15755466b704d3718d5",
     "Sources/FlyCore/Resources/smell-circuit.json" : "9e00b59098174bc9f8c0cc203780efec86bb5bbbdb48a2a551f496b98341e5be",
     "Sources/FlyCore/SmellCircuit.swift" : "ac3099cd6493ba288efe54fc930e35a22a48830b3ec45af7a0c30e8b9c2c88a6",
-    "Sources/Fruitfly/ActivityPainter.swift" : "db8fd693d1bb62c39421b3dbdbb78094072c06fba164d80ff3115973e46463ef",
+    "Sources/Fruitfly/ActivityPainter.swift" : "97c8a2f0ce24f8000a70db6506aaf4f4f9005f625977182ad46692a3f0f7a32a",
     "Sources/Fruitfly/ActivityRecorder.swift" : "71683ba0e94477e393ce9dbc2a498a4b49ccaab1296c3497a4885560510aefe7",
     "Sources/Fruitfly/FlyPainter.swift" : "2d05717b6b17787cc4a00bf337f79cecdd6b5554bb565e65bdfafbc87e14eb8d"
   },
