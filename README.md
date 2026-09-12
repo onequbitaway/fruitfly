@@ -5,7 +5,7 @@ A small pet fly for your Mac desktop.
 The fly moves above your apps. Drop food and watch it land and eat.
 Move the pointer quickly near the fly to make it move away.
 
-**[Download the desktop pet](https://github.com/onequbitaway/fruitfly/releases/latest)** · **[Download the full-map preview](https://github.com/onequbitaway/fruitfly/releases/tag/full-map-preview-0.1.0)**
+**[Download the desktop pet](https://github.com/onequbitaway/fruitfly/releases/latest)** · **[Download the full-map preview](https://github.com/onequbitaway/fruitfly/releases/tag/full-map-preview-0.1.1)**
 
 | Download | What you get |
 | --- | --- |

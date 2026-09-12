@@ -1,6 +1,7 @@
 // swift-tools-version: 5.9
 import PackageDescription
 let package = Package(name: "FruitflyBrainPreview", platforms: [.macOS(.v14)], products: [
+    .library(name: "BrainCore", targets: ["BrainCore"]),
     .executable(name: "FruitflyBrainPreview", targets: ["BrainPreview"]),
     .executable(name: "BrainChecks", targets: ["BrainChecks"])
 ], targets: [

@@ -4,7 +4,12 @@ The preview includes both Simple (3,745 cells) and Full map (166,700 cells).
 The full graph has 25,582,938 directed connections. Both modes run in the preview window.
 The download contains the data and works without Python, an account, or a separate service.
 
-Download **Fruitfly-Full-Map-Preview-0.1.0-macos-universal.zip**.
+Download **Fruitfly-Full-Map-Preview-0.1.1-macos-universal.zip**.
+
+This update fixes a difference between CPU and graphics results on Intel.
+The two solvers now keep the same rounded math steps. Full-network checks
+pass on native Intel and Apple Silicon runners, with zero differing rates
+after 300 ms. The data pack and saved Apple Silicon videos are unchanged.
 Extract it, then move **Fruitfly Preview** to Applications.
 The app supports macOS 14 or later on Apple Silicon and Intel Macs.
 Metal is used when available. A CPU fallback runs the same model.

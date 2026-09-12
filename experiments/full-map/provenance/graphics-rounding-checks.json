@@ -1,0 +1,18 @@
+{
+  "sourceCommit": "dd72383",
+  "change": "Use shared decay coefficients and preserve separately rounded graphics operations.",
+  "githubRun": "https://github.com/onequbitaway/fruitfly/actions/runs/34722491661",
+  "nativeAppleSilicon": "passed",
+  "nativeIntel": "passed",
+  "fullNetworkCells": 166700,
+  "comparedModelMilliseconds": 300,
+  "CPUvsGPURateMismatches": 0,
+  "checks": [
+    "Independent analytical voltage and delay checks",
+    "Full graph counts and all input trials",
+    "Repeated graphics results match exactly",
+    "CPU and graphics full-network spikes match exactly",
+    "MN9 block changes food use",
+    "Both modes build and run in the packaged app"
+  ]
+}

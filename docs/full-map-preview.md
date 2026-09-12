@@ -1,7 +1,7 @@
 # Full map preview
 
 The README shows a recording of an experimental model.
-[Download the runnable preview](https://github.com/onequbitaway/fruitfly/releases/tag/full-map-preview-0.1.0)
+[Download the runnable preview](https://github.com/onequbitaway/fruitfly/releases/tag/full-map-preview-0.1.1)
 or [build it from source](../experiments/full-map/README.md).
 The preview window includes Simple and Full map modes. It is a separate app from the desktop pet.
 The released app uses the smaller circuit shown in the **Simple** clip.

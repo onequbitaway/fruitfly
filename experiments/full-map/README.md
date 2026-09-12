@@ -4,7 +4,7 @@ Run the full mapped network and inspect its activity.
 Choose **Simple** or **Full map** in the same window.
 The source includes the CPU solver, Metal solver, controls, model checks, and animation code.
 
-[Download the Mac preview](https://github.com/onequbitaway/fruitfly/releases/tag/full-map-preview-0.1.0)
+[Download the Mac preview](https://github.com/onequbitaway/fruitfly/releases/tag/full-map-preview-0.1.1)
 
 The preview runs in its own window. The released [desktop pet](../../README.md) floats above your apps.
 The desktop animation is a rendered scene made with this full-map model.
@@ -12,7 +12,7 @@ The desktop animation is a rendered scene made with this full-map model.
 ## Download and run
 
 1. Open the download page.
-2. Download `Fruitfly-Full-Map-Preview-0.1.0-macos-universal.zip`.
+2. Download `Fruitfly-Full-Map-Preview-0.1.1-macos-universal.zip`.
 3. Open the ZIP file.
 4. Move **Fruitfly Preview** to Applications.
 5. Open it.
