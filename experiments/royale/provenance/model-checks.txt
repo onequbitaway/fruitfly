@@ -1,0 +1,14 @@
+./experiments/full-map/scripts/fetch-data.sh
+The full-map data is ready.
+swift run -c release --package-path experiments/royale RoyaleChecks experiments/full-map/Data --full
+[0/1] Planning build
+Building for production...
+[0/2] Write swift-version--1AB21518FC5DEDBE.txt
+[1/3] Write sources
+[3/4] Compiling RoyaleCore Arena.swift
+[3/5] Write Objects.LinkFileList
+[4/5] Linking RoyaleChecks
+Build of product 'RoyaleChecks' complete! (1.91s)
+Simple: ten brains checked; step cost 0.020303874975070357s
+Full map: ten brains checked; step cost 0.31633829162456095s
+0 failures; 30 complete rounds checked

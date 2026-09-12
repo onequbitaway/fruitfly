@@ -1,0 +1,2 @@
+Packaged Simple: ten brains and arena render passed
+Packaged Full map: ten brains and arena render passed

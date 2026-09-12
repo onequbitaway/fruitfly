@@ -1,0 +1,14 @@
+{
+  "activity" : "Actual calculated spike counts. Each fly has separate state.",
+  "bloodToggleChangedPixels" : 564,
+  "cellsPerFly" : 166700,
+  "flyCount" : 10,
+  "frames" : 48,
+  "gameRules" : "Movement, combat, blood, health, food healing, and ring closure are programmed.",
+  "lastModelTime" : 14.399999999999965,
+  "mode" : "Full map",
+  "modelSecondsPerVideoSecond" : 3,
+  "renderDidNotChangeBrainRates" : true,
+  "seed" : 42,
+  "winner" : 1
+}

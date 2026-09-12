@@ -1,0 +1,36 @@
+name: Royale
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['experiments/royale/**', 'experiments/full-map/Sources/**', 'experiments/full-map/Package.swift', '.github/workflows/royale.yml']
+  pull_request:
+    paths: ['experiments/royale/**', 'experiments/full-map/Sources/**', 'experiments/full-map/Package.swift', '.github/workflows/royale.yml']
+
+permissions:
+  contents: read
+
+jobs:
+  royale:
+    name: Royale on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-14, macos-15-intel]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check complete rounds and ten independent brains in both modes
+        run: make royale-test-full
+      - name: Build the battle app
+        run: make royale-build
+      - name: Check both modes in the packaged app
+        run: "'dist/Fruitfly Royale.app/Contents/MacOS/FruitflyRoyale' --smoke-test"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Fruitfly-Royale-${{ matrix.os }}
+          path: |
+            dist/Fruitfly-Royale-*.zip
+            dist/Fruitfly-Royale-*.sha256

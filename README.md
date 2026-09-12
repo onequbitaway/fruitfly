@@ -49,6 +49,21 @@ This is an experimental model of the mapped network, not a complete working fly.
 Its window includes both modes. [Get the app or build the source.](experiments/full-map/README.md)
 [Read the model notes and check the saved values.](docs/full-map-preview.md)
 
+## Fruitfly Royale
+
+Ten flies start in a ring. Drop food to draw them together. Watch them fight
+as the ring closes. The last fly wins. Blood effects can be turned off.
+
+![Fruitfly Royale: ten full-map flies, food, fights, and a shrinking ring.](docs/media/fruitfly-royale.gif)
+
+Each fly has a separate brain state. Choose Simple or Full map.
+The brain activity comes from calculations. Combat, blood, health, and
+movement follow game rules. This Full map replay runs at three times model time.
+
+**[Download Fruitfly Royale](https://github.com/onequbitaway/fruitfly/releases/tag/royale-0.1.0)**
+or run `make royale` from this repository.
+[See controls, source, and model limits.](experiments/royale/README.md)
+
 ## Install
 
 These steps install the desktop pet. For the two-mode preview, use [its setup guide](experiments/full-map/README.md).

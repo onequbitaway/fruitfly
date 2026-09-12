@@ -41,3 +41,25 @@ preview-demo: preview-build
 
 desktop-demo: preview-build
 	'dist/Fruitfly Preview.app/Contents/MacOS/FruitflyBrainPreview' --record-desktop experiments/full-map/output/desktop --brain-gif docs/media/full-map-activity.gif
+
+.PHONY: royale royale-build royale-release royale-test royale-test-full royale-demo
+
+royale: royale-build
+	open 'dist/Fruitfly Royale.app'
+
+royale-build:
+	./experiments/royale/scripts/build.sh
+
+royale-release:
+	./experiments/royale/scripts/build.sh --universal
+
+royale-test:
+	./experiments/full-map/scripts/fetch-data.sh
+	swift run -c release --package-path experiments/royale RoyaleChecks experiments/full-map/Data
+
+royale-test-full:
+	./experiments/full-map/scripts/fetch-data.sh
+	swift run -c release --package-path experiments/royale RoyaleChecks experiments/full-map/Data --full
+
+royale-demo: royale-build
+	'dist/Fruitfly Royale.app/Contents/MacOS/FruitflyRoyale' --record experiments/royale/output/full --full
