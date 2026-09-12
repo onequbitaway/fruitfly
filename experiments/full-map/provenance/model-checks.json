@@ -1,0 +1,104 @@
+{
+  "CPUvsGPURateMismatchesAt300ms" : 0,
+  "failures" : 0,
+  "inputTrials" : [
+    {
+      "active" : 0,
+      "DNa02LeftHz" : 0,
+      "DNa02RightHz" : 0,
+      "groupActive" : [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "input" : "No input",
+      "MN9Hz" : 0,
+      "wallSecondsPerModelSecond" : 0.090297833317890763
+    },
+    {
+      "active" : 15398,
+      "DNa02LeftHz" : 0,
+      "DNa02RightHz" : 0,
+      "groupActive" : [
+        1856,
+        77,
+        894,
+        699,
+        4160,
+        222,
+        216,
+        5768,
+        1506
+      ],
+      "input" : "Smell",
+      "MN9Hz" : 5,
+      "wallSecondsPerModelSecond" : 0.45670841680839658
+    },
+    {
+      "active" : 15226,
+      "DNa02LeftHz" : 0,
+      "DNa02RightHz" : 0,
+      "groupActive" : [
+        1706,
+        94,
+        864,
+        667,
+        4160,
+        231,
+        231,
+        5716,
+        1557
+      ],
+      "input" : "Taste LB1",
+      "MN9Hz" : 5,
+      "wallSecondsPerModelSecond" : 0.47367108333855867
+    },
+    {
+      "active" : 4694,
+      "DNa02LeftHz" : 0,
+      "DNa02RightHz" : 0,
+      "groupActive" : [
+        13,
+        0,
+        657,
+        665,
+        17,
+        187,
+        250,
+        1934,
+        971
+      ],
+      "input" : "Feeding pathway",
+      "MN9Hz" : 100,
+      "wallSecondsPerModelSecond" : 0.38245616666972637
+    },
+    {
+      "active" : 15842,
+      "DNa02LeftHz" : 90,
+      "DNa02RightHz" : 0,
+      "groupActive" : [
+        1750,
+        78,
+        1277,
+        701,
+        4159,
+        242,
+        212,
+        5898,
+        1525
+      ],
+      "input" : "Visual LC10a",
+      "MN9Hz" : 10,
+      "wallSecondsPerModelSecond" : 0.47219524998217821
+    }
+  ],
+  "modelStepMilliseconds" : 0.20000000000000001,
+  "processor" : "Apple M4 Max",
+  "seed" : 7
+}

@@ -1,0 +1,30 @@
+name: Full map
+
+on:
+  workflow_dispatch:
+  release:
+    types: [published]
+
+permissions:
+  contents: read
+
+jobs:
+  full-map:
+    if: github.event_name == 'workflow_dispatch' || startsWith(github.event.release.tag_name, 'full-map-preview-')
+    name: Full map on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-14, macos-15-intel]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check the full graph and solvers
+        run: make preview-test
+      - name: Build and check both modes
+        run: make preview-ui-check
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Full-map-checks-${{ matrix.os }}
+          path: experiments/full-map/output/checks.json

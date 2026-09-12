@@ -1,0 +1,2 @@
+Verified all 20,004,000 rates, class readouts, model time, and each food-use step against MN9.
+Food gone at 6.4 model seconds.

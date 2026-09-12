@@ -1,7 +1,9 @@
 # Full map preview
 
 The README shows a recording of an experimental model.
-It is not included in the current desktop app download.
+[Download the runnable preview](https://github.com/onequbitaway/fruitfly/releases/tag/full-map-preview-0.1.0)
+or [build it from source](../experiments/full-map/README.md).
+The preview window includes Simple and Full map modes. It is a separate app from the desktop pet.
 The released app uses the smaller circuit shown in the **Simple** clip.
 The two clips use different cell rules. They are not a controlled comparison of network size.
 
@@ -130,8 +132,30 @@ The local model checks covered an independent inhibitory response, delay, sign, 
 CPU and graphics calculations produced the same cell rates and total spike counts in a 300-millisecond full-network comparison.
 Blocking MN9 prevented food use while other cells still fired.
 These checks test the software. They do not establish biological accuracy.
-The full-map prototype and its data pack are not part of the released source or app.
-The files above let you inspect this recording; `make check-demo` reruns the released Simple clip only.
+The [full-map source](../experiments/full-map) includes both solvers, the controls, and the animation code.
+The preview release contains the prepared data pack and a Mac app with both modes.
+Run `make preview-test` to check the model. Run `make preview-demo` to render a new brain recording.
+Run `make desktop-demo` to render the desktop GIF and MP4 videos.
+The [source guide](../experiments/full-map/README.md) explains setup and saved-value checks.
+`make check-demo` continues to check the released Simple clip only.
+
+## Desktop video
+
+![Desktop scene made with the full-map model](media/desktop-full-map.gif)
+
+The [desktop video](https://github.com/onequbitaway/fruitfly/releases/download/full-map-preview-0.1.0/fruitfly-desktop-full-map.mp4)
+shows a 12-second trial. The windows and pointer are drawn for the scene.
+It is not a recording of a personal desktop or a demonstration of a new desktop overlay.
+The full-map app runs in its own window.
+
+The trial uses a 0.1 portion. Actual MN9 output consumes it by 6.4 seconds of model time.
+The fly then resumes the prototype's exploring motion.
+The [frame trace](media/desktop-full-map-frames.json) records the inputs, readouts, and trial states.
+The release's evidence archive includes all 20,004,000 cell rates and the checks.
+
+The [20-second cut](https://github.com/onequbitaway/fruitfly/releases/download/full-map-preview-0.1.0/fruitfly-desktop-and-brain.mp4)
+puts this desktop trial before the earlier eight-second brain recording.
+These are separate runs. The model clock starts again at the cut.
 
 ## Source and license
 

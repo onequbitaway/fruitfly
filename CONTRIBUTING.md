@@ -6,6 +6,8 @@
 4. Check the behavior on your Mac.
 5. Open a pull request.
 
+The full-map source is in `experiments/full-map`. Use `make preview` and `make preview-test` for that app.
+
 Describe the problem, the change, and the checks you completed.
 Add tests when a change affects movement, food, or saved settings.
 

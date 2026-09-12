@@ -55,6 +55,18 @@ No desktop recording or video package is required.
 See [the activity guide](activity.md) for the file format and checks.
 Keep the recording in sync when you change the model or its drawing code.
 
+## Full-map preview
+
+All experimental model and recording code is in `experiments/full-map`.
+Run `make preview` for a fresh source build with checked data.
+Run `make preview-test` and `make preview-ui-check` for the full model and window checks.
+Run `make preview-release` for a universal Mac bundle.
+Read [the source guide](../experiments/full-map/README.md) for data extraction and animation export.
+
+Full-map releases use tags such as `full-map-preview-0.1.0` and are marked as previews.
+They include the data pack, app, videos, evidence archive, and checksums.
+The Full map workflow checks both Mac architectures after publication.
+
 ## Release
 
 1. Update `VERSION`.

@@ -1,0 +1,14 @@
+{
+  "previewVersion": "0.1.0",
+  "modelChecks": "All passed; CPU and graphics rates matched after 300 ms.",
+  "appleSiliconUI": "Passed 7 live UI checks",
+  "intelUIUnderRosetta": "Passed 7 live UI checks",
+  "brainReplayValues": 13336000,
+  "desktopReplayValues": 20004000,
+  "replayResult": "Published-package outputs match the original saved Float32 files byte for byte.",
+  "binaryArchitectures": [
+    "arm64",
+    "x86_64"
+  ],
+  "notarized": false
+}

@@ -5,7 +5,19 @@ A small pet fly for your Mac desktop.
 The fly moves above your apps. Drop food and watch it land and eat.
 Move the pointer quickly near the fly to make it move away.
 
-**[Download for Mac](https://github.com/onequbitaway/fruitfly/releases/latest)**
+**[Download the desktop pet](https://github.com/onequbitaway/fruitfly/releases/latest)** · **[Download the full-map preview](https://github.com/onequbitaway/fruitfly/releases/tag/full-map-preview-0.1.0)**
+
+| Download | What you get |
+| --- | --- |
+| Desktop pet | The small smell circuit, with a fly above your apps. |
+| Full-map preview | A separate window with Simple and Full map modes. Both data sets are included. |
+
+All app, model, and animation code is public. [Build the full-map preview from source.](experiments/full-map/README.md)
+
+![A staged desktop scene using the full-map prototype: a fly crosses windows, eats a crumb, and flies away.](docs/media/desktop-full-map.gif)
+
+The desktop clip uses a staged scene and the full-map model. Movement follows pet rules.
+[Download the desktop and brain video for sharing.](https://github.com/onequbitaway/fruitfly/releases/download/full-map-preview-0.1.0/fruitfly-desktop-and-brain.mp4)
 
 ## Watch the brain models
 
@@ -33,10 +45,13 @@ The network includes the brain and nerve cord. Cells without positions still tak
 Movement toward food remains guided. Food use reads the MN9 feeding output.
 
 This is an experimental model of the mapped network, not a complete working fly.
-**Full map is a preview. It is not included in the current app download.**
+**The full-map preview is now available as a separate download.**
+Its window includes both modes. [Get the app or build the source.](experiments/full-map/README.md)
 [Read the model notes and check the saved values.](docs/full-map-preview.md)
 
 ## Install
+
+These steps install the desktop pet. For the two-mode preview, use [its setup guide](experiments/full-map/README.md).
 
 1. Open the download page.
 2. Download the file that ends in `macos-universal.zip`.
@@ -127,6 +142,9 @@ Read [the activity guide](docs/activity.md) for the scale and recording checks.
 The build creates `dist/Fruitfly.app`. You can move this file to Applications.
 Run `make test` to check the movement and included data.
 Run `make release` to build one app for both Mac types.
+
+Run `make preview` to download the checked data pack and build the full-map preview.
+Run `make preview-test` to check its model. See [the full-map source guide](experiments/full-map/README.md).
 
 ## Brain map
 

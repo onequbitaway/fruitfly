@@ -1,0 +1,5 @@
+Read status 2 samples 360 expected 360 error nil
+fruitfly-desktop-full-map.mp4 verified 12.0 seconds 360 frames, H.264, 1280 × 800, 30 fps
+Read status 2 samples 600 expected 600 error nil
+fruitfly-desktop-and-brain.mp4 verified 20.0 seconds 600 frames, H.264, 1280 × 800, 30 fps
+GIF verified: 120 frames, 12 seconds, 960 × 600

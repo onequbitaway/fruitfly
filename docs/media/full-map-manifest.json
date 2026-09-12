@@ -189,5 +189,7 @@
       "bytes": 451716,
       "sha256": "822a8a0a1132e06f81bb987ef0a9e1a6456e4d4a37e810d7286257efd78e2bcb"
     }
-  }
+  },
+  "publicSource": "https://github.com/onequbitaway/fruitfly/tree/full-map-preview-0.1.0/experiments/full-map",
+  "publicReplay": "Reformatted and packaged public source reproduced all 13,336,000 saved Float32 brain rates byte for byte."
 }

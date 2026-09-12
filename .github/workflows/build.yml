@@ -27,6 +27,10 @@ jobs:
         run: make check-demo
       - name: Check the packaged app
         run: dist/Fruitfly.app/Contents/MacOS/Fruitfly --smoke-test
+      - name: Build the full-map source
+        run: swift build -c release --package-path experiments/full-map
+      - name: Check the full-map cell equations without a data download
+        run: swift run -c release --package-path experiments/full-map BrainChecks --kernel-only
       - uses: actions/upload-artifact@v4
         with:
           name: Fruitfly-${{ matrix.os }}
