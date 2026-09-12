@@ -184,8 +184,13 @@ final class MetalSolver {
             if (silenced[i]) { v=0; current=0; }
             else if (forced) { spike=true; counts[i]+=1; v=0; current=0; refractory[i]=p.tick; }
             else if (p.tick>=refractory[i]) {
-                current+=float(incoming)*p.weight;
-                v=v*p.membrane+current*p.coupling;
+                // Preserve the CPU's two separately rounded operations even
+                // on graphics drivers that contract multiply-add expressions.
+                volatile float incomingDrive=float(incoming)*p.weight;
+                current+=incomingDrive;
+                volatile float decayedVoltage=v*p.membrane;
+                volatile float coupledDrive=current*p.coupling;
+                v=decayedVoltage+coupledDrive;
                 current*=p.synapse;
                 if (v>7.0f) { spike=true; counts[i]+=1; v=0; current=0; refractory[i]=p.tick+11; }
             }
