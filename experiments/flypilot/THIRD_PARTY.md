@@ -89,3 +89,8 @@ Blender uses the GNU GPL. Its license is preserved in `vendor/BLENDER-GPL-LICENS
 The app stays outside Git and the release archives. `provenance/blender.json`
 records the tested download and checksum. Each Blender download also includes
 its dependency licenses. Rendered output retains the source assets' terms.
+
+The animated fly, twin-stick remote, explosion, blood effects, drone fragments,
+and programmed fall are original project graphics. The remote is inspired by
+camera-drone controllers. It uses no DJI logo, CAD file, or hardware interface.
+The fly's motion is programmed. It is not measured animal behavior.

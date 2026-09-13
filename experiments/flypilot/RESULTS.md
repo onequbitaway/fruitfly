@@ -74,14 +74,21 @@ The average Full map evaluation speed was 0.67 times real time. Simple averaged 
 Evaluation jobs ran concurrently with other local checks. These are workload measurements,
 not isolated hardware benchmarks.
 
-The enhanced video renders the saved geometry and verified poses with Blender 5.2.1.
-It adds ray-traced lighting, material detail, and volume smoke. It preserves the
-original sensor camera and calculated brain samples in the instrument view.
-Its camera starts wide and moves closer. The 102 world frames took 230.50 seconds to render,
-after scene setup. Rendering ran alongside local validation work. Encoding time is separate.
-The scenery-only GLB excludes the Mixamo character. The local render cache includes
-that character and stays outside Git and the release archives.
-Motor and contact sounds are synthesized game effects. They are not measured acoustics.
+The enhanced video uses saved geometry and verified poses through contact. It adds
+ray-traced lighting, material detail, and smoke. After contact it adds a programmed
+explosion, blood spray, fall, fragments, and stains. These are fictional game graphics.
+The original sensor camera and calculated brain samples stay in the instrument view.
+The fall is an artistic pose transform. It is not a measured injury or ragdoll simulation.
+
+A separate animation shows an original fly operating a twin-stick camera-drone remote.
+Its leg and stick positions follow the saved commands. The remote screen shows saved
+camera pixels. Wing motion is programmed. A close-up video accompanies the flight view.
+The selected world frames took 316.70 seconds to render. The fly-pilot view
+took 83.97 seconds. These timers exclude video encoding. The world render
+reused verified pre-contact frames and rendered the changed impact frames again.
+The scenery-only GLB excludes the Mixamo character and the added visual effects.
+Local scene caches stay outside Git and release archives.
+Motor, blast, and contact sounds are synthesized. They are not measured acoustics.
 
 ## Optional portrait studio
 

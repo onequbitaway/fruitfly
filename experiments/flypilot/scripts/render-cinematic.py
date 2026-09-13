@@ -140,20 +140,39 @@ if output.suffix.lower()=='.png':
 else:
     output.mkdir(parents=True,exist_ok=True)
     frames=json.loads((root/'frames.json').read_text());records=[]
+    sys.path.insert(0,str(Path(__file__).parent))
+    from game_effects import CombatEffects
+    contact=next((f['contact'] for f in frames if f.get('contact')),None)
+    effects=CombatEffects(contact) if contact else None
+    start_frame=int(args[args.index('--start-frame')+1]) if '--start-frame' in args else 0
+    if start_frame:
+        records=json.loads((output/'render-times.json').read_text())[:start_frame]
+    previous_wall=records[-1]['renderWallSeconds'] if records else 0
     dynamic=[part for part in manifest['parts'] if part['role']!='static']
     for frame in frames:
-        arrays=np.load(root/'poses'/f"{frame['index']:05}.npz")
+        if frame['index']<start_frame:continue
+        arrays=dict(np.load(root/'poses'/f"{frame['index']:05}.npz"))
+        if effects:
+            effects.update(frame['time'])
+            for entity in {p['entity'] for p in dynamic if p['role']=='character'}:
+                arrays[str(entity)]=effects.fallen_vertices(arrays[str(entity)],frame['time'])
         for part in dynamic:
             vertices=arrays[str(part['entity'])][part['vertexStart']:part['vertexStart']+part['vertexCount']]
             mesh=bpy.data.objects[part['name']].data;mesh.vertices.foreach_set('co',vertices.ravel());mesh.update()
+            if part['role'] in ['drone','shell','lens']:
+                bpy.data.objects[part['name']].hide_render=bool(contact and frame['time']>=contact['time']-1e-7)
         progress=min(1,frame['time']/5);blend=progress*progress*(3-2*progress)
         eye=np.array(frame['overviewEye'])+(1-blend)*np.array([1.35,-4.,1.35])
         look=np.array(frame['overviewLook'])+(1-blend)*np.array([0,-2.35,.15])
+        tau=frame['time']-contact['time'] if contact else -1
+        if tau>=0:
+            shake=.06*math.exp(-tau*5)
+            eye+=shake*np.array([math.sin(tau*83),math.cos(tau*79),math.sin(tau*67)])
         fov=55-11*blend
         camera.location=eye;camera.rotation_euler=(Vector(look)-camera.location).to_track_quat('-Z','Y').to_euler()
         camera.data.lens=24/(2*math.tan(math.radians(fov)/2))
         scene.render.filepath=str(output/f"{frame['index']:05}.png")
         bpy.context.view_layer.update();bpy.ops.render.render(write_still=True)
-        records.append(dict(index=frame['index'],modelTime=frame['time'],renderWallSeconds=time.monotonic()-started,eye=eye.tolist(),look=look.tolist(),fov=fov))
+        records.append(dict(index=frame['index'],modelTime=frame['time'],renderWallSeconds=previous_wall+time.monotonic()-started,eye=eye.tolist(),look=look.tolist(),fov=fov,combatEffects=tau>=0))
         print('Rendered verified frame',frame['index'],'elapsed',round(time.monotonic()-started,2),flush=True)
         (output/'render-times.json').write_text(json.dumps(records,indent=2)+'\n')

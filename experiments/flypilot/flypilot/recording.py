@@ -68,7 +68,7 @@ class Instruments:
             x,y=world_point(frame["before"]["contact"]["characterPoint"])
             d.ellipse((x-22,y-22,x+22,y+22),outline=CORAL,width=4)
             d.rounded_rectangle((44,182,280,235),radius=8,fill=CORAL)
-            d.text((60,192),"CONTACT",font=font(29,True),fill="#ffffff")
+            d.text((60,192),"IMPACT" if frame.get('combatEffects') else "CONTACT",font=font(29,True),fill="#ffffff")
         d.rounded_rectangle((44,128,315 if outdoor else 262,165),radius=8,fill=panel)
         view_label="Battle map · Cycles" if frame.get("renderer") else "Battle map · flight view" if outdoor else "Studio · flight view"
         d.text((57,133),view_label,font=font(21),fill=ink)
@@ -110,7 +110,8 @@ class Instruments:
         if frame.get("renderer"):timing+=f' · Render {frame["renderWallSeconds"]:.1f} s'
         else:timing+=" · Genesis 1.4.0"
         d.text((34,1040),timing,font=font(20),fill=ink)
-        d.text((1338,1040),"Game camera sensors + flight stabilizer" if outdoor else "Camera matcher + programmed flight stabilizer",font=font(19),fill=ink)
+        footer="Recorded approach · programmed impact" if frame.get('combatEffects') else "Game camera sensors + flight stabilizer" if outdoor else "Camera matcher + programmed flight stabilizer"
+        d.text((1338,1040),footer,font=font(19),fill=ink)
         return np.asarray(im)
 
 def jpeg_bytes(rgb):

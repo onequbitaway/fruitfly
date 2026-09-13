@@ -144,3 +144,19 @@ The service uses versioned JSON lines on stdin and stdout. Metadata sends cell p
 once, with their original indices. Logs go to stderr. The client sets a bounded response wait.
 A missing service or timeout stops the flight. Restart resets the entire run.
 The local HTTP view requires a same-origin header for mutations. It has no upload endpoint.
+
+## Programmed combat and fly-pilot animation
+
+The enhanced video uses the verified flight geometry up to contact. After contact,
+the renderer adds an explosion, blood spray, a posed fall, fragments, and ground stains.
+It hides the intact drone and shows animated fragments. The fall is an artistic pose
+transform with a floor constraint. It is not an injury, blast, or ragdoll physics model.
+Random effect placement uses seed 720. A short camera shake and synthesized blast
+sound use the saved contact time. None of these effects feed back into the controller.
+The original sensor camera and all calculated cell samples remain in the instrument view.
+
+The original fly character operates a generic camera-drone remote in a separate rendered
+view. The left stick moves with saved yaw commands. The right stick moves with saved
+forward commands. Its forelegs touch the stick pads. Wings use a programmed flap.
+The remote screen uses the corresponding saved camera image. This animation represents
+the model's commands. It does not claim that a real fly operates a remote.

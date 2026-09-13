@@ -57,9 +57,10 @@ with zipfile.ZipFile(OUT/'FlyPilot-0.1.0-evidence.zip','w',zipfile.ZIP_DEFLATED,
     for folder in ['weights','provenance']:
         selected.extend((p,folder+'/'+p.name) for p in (ROOT/folder).iterdir() if p.is_file())
     selected.extend((ROOT/name,name) for name in ['README.md','METHODS.md','RESULTS.md','THIRD_PARTY.md','GAME_MAP.md'])
-    selected.extend((cinematic/name,'enhanced-render/'+name) for name in ['render-provenance.json','sound.json','opening.png','contact.png'])
+    selected.extend((cinematic/name,'enhanced-render/'+name) for name in ['render-provenance.json','sound.json','opening.png','contact.png','fly-pilot.png'])
     selected.append((ROOT/'runs/battle-cinematic-frames/render-times.json','enhanced-render/render-times.json'))
     selected.append((ROOT/'runs/cinematic-recording/frames.json','enhanced-render/verified-poses.json'))
+    selected.append((ROOT/'runs/pilot-frames/render-times.json','enhanced-render/pilot-timing.json'))
     selected.append((REPO/'LICENSE','LICENSE'))
     manifest={}
     for path,name in sorted(selected,key=lambda item:item[1]):
@@ -72,6 +73,7 @@ with zipfile.ZipFile(OUT/'FlyPilot-0.1.0-evidence.zip','w',zipfile.ZIP_DEFLATED,
         'The evidence contains public rendered cameras and calculated rates. It does not contain raw brain wiring.\n')
 shutil.copy2(cinematic/'flypilot-cinematic.mp4',OUT/'FlyPilot-0.1.0-full-map.mp4')
 shutil.copy2(cinematic/'battle-map.mp4',OUT/'FlyPilot-0.1.0-battle-map.mp4')
+shutil.copy2(cinematic/'fly-pilot.mp4',OUT/'FlyPilot-0.1.0-fly-pilot.mp4')
 shutil.copy2(cinematic/'battle-map.glb',OUT/'FlyPilot-0.1.0-battle-map.glb')
 files=sorted(p for p in OUT.iterdir() if p.name.startswith('FlyPilot-0.1.0-') and p.suffix in ['.zip','.mp4','.glb'])
 (OUT/'SHA256SUMS.txt').write_text(''.join(hashlib.sha256(p.read_bytes()).hexdigest()+'  '+p.name+'\n' for p in files))

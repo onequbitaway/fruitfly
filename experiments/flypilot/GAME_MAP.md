@@ -24,3 +24,8 @@ This release does not include an Unreal, Unity, or Godot integration plugin.
 The GLB keeps image materials and a dark base color on the vehicles.
 Procedural soot, smoke, haze, and the Cycles lighting are specific to the rendered video.
 Recreate those effects in your engine. Optimize meshes and add collision shapes before play.
+
+The enhanced video adds graphic combat effects after the recorded contact.
+`scripts/game_effects.py` contains the original explosion, blood, debris, and fall animation.
+`scripts/render-pilot.py` builds and animates the original fly and camera-drone-style remote.
+These effects and the fly inset are not part of the scenery-only GLB.

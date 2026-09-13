@@ -23,4 +23,7 @@ the recorded body point. The 0.52 m drone is rendered at its actual simulated si
 
 The live scene uses Genesis. The enhanced recording uses Blender to light the same
 geometry and verified poses. Its sensor camera and cell plot keep the original data.
-A separate unobstructed recording gives game artists a clear view of the map.
+A second recording pairs the map with a fly-pilot inset. A separate close view shows
+the original fly operating a twin-stick remote. Its leg and stick movement follows
+saved commands. Graphic combat effects begin at the recorded contact time.
+The instrument footer identifies the programmed impact.

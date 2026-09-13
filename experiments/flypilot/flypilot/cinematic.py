@@ -61,17 +61,21 @@ def capture_recording(recording,folder):
             assert actual['sensorHash']==saved['sensorHash']
             np.testing.assert_allclose(actual['state']['position'],saved['state']['position'],atol=2e-5,rtol=0)
             assert actual['state']['events']==saved['state']['events']
-            output.append(dict(index=saved['index'],time=saved['before']['time'],overviewEye=saved['before']['overviewEye'],overviewLook=saved['before']['overviewLook'],overviewFov=saved['before']['overviewFov'],rateHash=saved['brain']['rateHash'],verticesHash=hashlib.sha256(path.read_bytes()).hexdigest()))
+            output.append(dict(index=saved['index'],time=saved['before']['time'],overviewEye=saved['before']['overviewEye'],overviewLook=saved['before']['overviewLook'],overviewFov=saved['before']['overviewFov'],rateHash=saved['brain']['rateHash'],verticesHash=hashlib.sha256(path.read_bytes()).hexdigest(),action=saved['action'],contact=saved['before'].get('contact')))
+            cameras=folder/'cameras';cameras.mkdir(exist_ok=True)
+            import shutil
+            shutil.copy2(recording/'camera'/f"{saved['index']:05}.png",cameras/f"{saved['index']:05}.png")
             if saved['index']%25==0:print('Exported verified frame',saved['index'],flush=True)
         (folder/'frames.json').write_text(json.dumps(output,indent=2)+'\n')
     finally:experiment.close()
 
-def assemble(recording,rendered,output):
+def assemble(recording,rendered,output,pilot=None):
     """Combine rendered world frames with the original camera, rates, and physical path."""
     import gzip
     import shutil
     import imageio.v2 as imageio
-    from .recording import Instruments
+    from .recording import Instruments,font
+    from PIL import ImageDraw
     from .sound import add_sound
     recording,rendered,output=map(Path,[recording,rendered,output]);output.mkdir(parents=True,exist_ok=True)
     with gzip.open(recording/'trace.jsonl.gz','rt') as stream:frames=[json.loads(line) for line in stream]
@@ -79,6 +83,10 @@ def assemble(recording,rendered,output):
     instruments=Instruments(json.loads((recording/'metadata.json').read_text()));path=[];hashes=[];saved_contact=False
     movie=imageio.get_writer(str(output/'flypilot-cinematic.mp4'),fps=10,codec='libx264',macro_block_size=8,quality=8,ffmpeg_log_level='error')
     world_movie=imageio.get_writer(str(output/'battle-map.mp4'),fps=10,codec='libx264',macro_block_size=8,quality=8,ffmpeg_log_level='error')
+    pilot_movie=imageio.get_writer(str(output/'fly-pilot.mp4'),fps=10,codec='libx264',macro_block_size=8,quality=8,ffmpeg_log_level='error') if pilot else None
+    pilot=Path(pilot) if pilot else None
+    pilot_timings=json.loads((pilot/'render-times.json').read_text()) if pilot else []
+    if pilot:assert len(pilot_timings)==len(frames)
     try:
         for frame,timing in zip(frames,timings):
             index=frame['index'];assert index==timing['index']
@@ -87,18 +95,35 @@ def assemble(recording,rendered,output):
             assert hashlib.sha256(camera.tobytes()).hexdigest()==frame['cameraHash']
             frame['before'].update(overviewEye=timing['eye'],overviewLook=timing['look'],overviewFov=timing['fov'])
             frame['renderer']='Blender 5.2.1';frame['renderWallSeconds']=timing['renderWallSeconds']
+            frame['combatEffects']=timing.get('combatEffects',False)
+            raw_world_hash=hashlib.sha256(world.tobytes()).hexdigest()
+            if pilot:
+                assert pilot_timings[index]['index']==index and pilot_timings[index]['action']==frame['action']
+                pilot_frame=Image.open(pilot/f'{index:05}.png').convert('RGB')
+                closeup=pilot_frame.copy();pd=ImageDraw.Draw(closeup)
+                pd.rectangle((0,598,960,640),fill='#11191d')
+                pd.text((20,606),'Fly pilot · programmed animation',font=font(21),fill='#e7ecec')
+                pilot_movie.append_data(np.asarray(closeup))
+                if index==50:closeup.save(output/'fly-pilot.png')
+                display=Image.fromarray(world.copy());wd=ImageDraw.Draw(display)
+                wd.rounded_rectangle((18,508,382,776),radius=9,fill='#11191d',outline='#75929b',width=1)
+                wd.text((30,514),'Fly pilot · animation',font=font(19),fill='#e7ecec')
+                display.paste(pilot_frame.resize((360,240)),(20,534));world=np.asarray(display)
             path.append(frame['state']['position'])
             composed=instruments.compose(world,camera,frame,path)
             movie.append_data(composed);world_movie.append_data(world)
             if index in [0,50]:Image.fromarray(composed).save(output/('opening.png' if index==0 else 'preview.png'))
             if frame['before'].get('contact') and not saved_contact:
                 Image.fromarray(composed).save(output/'contact.png');saved_contact=True
-            hashes.append(dict(index=index,worldHash=hashlib.sha256(world.tobytes()).hexdigest(),rateHash=frame['brain']['rateHash']))
-    finally:movie.close();world_movie.close()
+            hashes.append(dict(index=index,worldHash=raw_world_hash,rateHash=frame['brain']['rateHash']))
+    finally:
+        movie.close();world_movie.close()
+        if pilot_movie:pilot_movie.close()
     # Audio uses the original motor trace. It is a programmed game effect.
     shutil.copy2(recording/'trace.jsonl.gz',output/'trace.jsonl.gz')
-    add_sound(output,'flypilot-cinematic.mp4');add_sound(output,'battle-map.mp4')
-    (output/'render-provenance.json').write_text(json.dumps(dict(renderer='Blender 5.2.1 / Cycles / Metal',samples=16,frames=len(frames),fps=10,sourceTraceHash=hashlib.sha256((recording/'trace.jsonl.gz').read_bytes()).hexdigest(),renderWallSeconds=timings[-1]['renderWallSeconds'],frameHashes=hashes),indent=2)+'\n')
+    add_sound(output,'flypilot-cinematic.mp4',combat=True);add_sound(output,'battle-map.mp4',combat=True)
+    if pilot:add_sound(output,'fly-pilot.mp4',combat=True)
+    (output/'render-provenance.json').write_text(json.dumps(dict(renderer='Blender 5.2.1 / Cycles / Metal',samples=16,frames=len(frames),fps=10,sourceTraceHash=hashlib.sha256((recording/'trace.jsonl.gz').read_bytes()).hexdigest(),renderWallSeconds=timings[-1]['renderWallSeconds'],pilotRenderWallSeconds=pilot_timings[-1]['renderWallSeconds'] if pilot else 0,visualEffects='Programmed explosion, blood spray, falling character, fragments, stains, and animated fly at a remote. These effects do not change the recorded flight or sensors.',frameHashes=hashes),indent=2)+'\n')
     return output
 
 def render_recording(recording,output=None,blender=None):
@@ -117,6 +142,8 @@ def render_recording(recording,output=None,blender=None):
     export=output/'local-scene';images=output/'world-frames'
     capture_recording(recording,export)
     subprocess.run([executable,'--background','--factory-startup','--python',str(ROOT/'scripts/render-cinematic.py'),'--',str(export),str(images)],check=True)
-    assemble(recording,images,output)
+    pilot=output/'pilot-frames'
+    subprocess.run([executable,'--background','--factory-startup','--python',str(ROOT/'scripts/render-pilot.py'),'--',str(export),str(pilot)],check=True)
+    assemble(recording,images,output,pilot)
     shutil.copy2(export/'battle-map.glb',output/'battle-map.glb')
     print('Rendered recorded flight:',output,flush=True)

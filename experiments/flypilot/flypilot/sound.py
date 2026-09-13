@@ -7,7 +7,7 @@ import wave
 import numpy as np
 import imageio_ffmpeg
 
-def add_sound(folder,video='flypilot-full-map.mp4'):
+def add_sound(folder,video='flypilot-full-map.mp4',combat=False):
     folder=Path(folder)
     with gzip.open(folder/'trace.jsonl.gz','rt') as stream:frames=[json.loads(line) for line in stream]
     rate=48000;duration=len(frames)/10;t=np.arange(round(duration*rate))/rate
@@ -23,6 +23,13 @@ def add_sound(folder,video='flypilot-full-map.mp4'):
     if contact is not None:
         tau=np.maximum(0,t-contact);envelope=np.where(t>=contact,np.exp(-tau/0.055),0)
         signal+=envelope*(.34*np.sin(2*np.pi*82*tau)+.11*noise)
+        if combat:
+            signal*=np.where(t<contact,1,np.exp(-tau*20))
+            onset=(t>=contact).astype(float)
+            rumble=np.convolve(noise,np.ones(55)/55,mode='same')
+            signal+=onset*(.7*np.exp(-tau*8)*np.sin(2*np.pi*(48*tau-8*tau*tau))
+                +.36*np.exp(-tau*22)*noise+.8*np.exp(-tau*3)*rumble)
+            signal+=onset*.04*np.exp(-tau*1.8)*noise
     fade=np.minimum(1,t/.15)*np.minimum(1,(duration-t)/.18);signal*=fade
     samples=(np.clip(signal,-.95,.95)*32767).astype('<i2')
     audio=folder/'sound.wav'
@@ -31,4 +38,4 @@ def add_sound(folder,video='flypilot-full-map.mp4'):
     target=folder/video;temporary=target.with_name(target.stem+'-audio.mp4')
     subprocess.run([imageio_ffmpeg.get_ffmpeg_exe(),'-y','-loglevel','error','-i',str(target),'-i',str(audio),'-map','0:v:0','-map','1:a:0','-c:v','copy','-c:a','aac','-b:a','128k','-shortest','-movflags','+faststart',str(temporary)],check=True)
     temporary.replace(target)
-    (folder/'sound.json').write_text(json.dumps(dict(description='Synthesized game effects. Motor buzz follows recorded RPM. Contact sound uses the recorded event. Not measured acoustics.',seed=2026,sampleRate=rate,duration=duration,contactTime=contact),indent=2)+'\n')
+    (folder/'sound.json').write_text(json.dumps(dict(description='Synthesized game effects. Motor buzz follows recorded RPM. Contact sound uses the recorded event. Not measured acoustics.',combatExplosion=combat,seed=2026,sampleRate=rate,duration=duration,contactTime=contact),indent=2)+'\n')

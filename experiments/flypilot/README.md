@@ -8,6 +8,7 @@ road craters, rubble, exposed steel, and smoke.
 A fictional game soldier leaves a doorway and walks along the pavement.
 The larger drone approaches the character. Geometric contact ends the encounter.
 The view shows the world, drone camera, flight path, and calculated cell activity.
+Enhanced recordings add graphic combat effects and an animated fly at a twin-stick remote.
 The optional studio scene follows a known portrait at a set distance.
 Full map runs 166,700 cells. Simple runs 3,745 cells with separate trained weights.
 
@@ -137,7 +138,18 @@ The render command replays the original inputs and verifies the camera, rates,
 positions, and contact. It exports the exact scene geometry and recorded visible poses.
 Blender adds lighting, material detail, and smoke. The instrument view keeps the
 original sensor camera and brain samples. Model-run time and render time stay separate.
-The two videos are `flypilot-cinematic.mp4` and the unobstructed `battle-map.mp4`.
+The enhanced clips show graphic fictional combat. The recorded contact triggers an
+explosion, blood spray, a programmed fall, debris, and blood stains. These are visual
+game effects. They do not change the saved flight, brain calculations, or sensor camera.
+The live Genesis view retains the contact-and-recoil encounter.
+
+An animated fly operates a camera-drone-style remote with two sticks and a screen.
+Its legs and sticks follow saved flight commands. Its wing motion is programmed.
+The remote screen shows the recorded sensor camera. This is an original comic character,
+not measured insect behavior. The remote uses no DJI branding or hardware connection.
+
+The videos are `flypilot-cinematic.mp4`, `battle-map.mp4` with a fly-pilot inset,
+and `fly-pilot.mp4` with a close view of the fly and remote.
 
 The renderer finds Blender in Applications or on PATH.
 Use `--blender /path/to/Blender` for another location.

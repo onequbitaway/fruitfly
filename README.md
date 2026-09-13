@@ -88,6 +88,7 @@ The character leaves a doorway. A geometric contact ends the encounter.
 The Full map calculates all 166,700 selected cells. A trained output map reads
 cell rates and controls forward speed and turns. The brain wiring stays fixed.
 Rendered game sensors find the character. A separate flight controller keeps the drone level.
+Enhanced videos add graphic game effects and an animated fly at a camera-drone remote.
 The optional studio scene follows a sample portrait at a set distance.
 
 **[Get the FlyPilot experiment](https://github.com/onequbitaway/fruitfly/releases/tag/flypilot-0.1.0)**

@@ -43,7 +43,14 @@
     "endToEndFrames": 10,
     "videoDecode": true,
     "audio": "AAC mono 48 kHz",
-    "sceneryOnly": true
+    "sceneryOnly": true,
+    "threeVideos": true,
+    "flyPilot": true,
+    "graphicCombat": "Render-only effects after recorded contact. Visual QA at contact, fall, and settled frames.",
+    "fullCombatFrames": 20,
+    "pilotFrames": 102,
+    "worldRenderSeconds": 316.7042100832332,
+    "pilotRenderSeconds": 83.97279462497681
   },
   "liveUI": {
     "fullContact": true,
@@ -75,10 +82,10 @@
         1920,
         1080
       ],
-      "fps": 10.0,
+      "fps": 10,
       "duration": 10.2,
       "decode": true,
-      "sha256": "46c46fdffaec4bf4f5b074936010326a4d45065a8a1791e532deb413aff79f66"
+      "sha256": "31cb3980d2f3a6066d80373866d7d9752776ded1e36ca45a44554c4719bc9a5a"
     },
     "battle-map.mp4": {
       "frames": 102,
@@ -86,10 +93,21 @@
         1280,
         800
       ],
-      "fps": 10.0,
+      "fps": 10,
       "duration": 10.2,
       "decode": true,
-      "sha256": "b842be14a6d137c7e55c97c83853863a6b4385a40729e380b984d5e69ae51ed9"
+      "sha256": "c2c6f7e8d0da6fcd1fbf2167b48b884bb0cf43f66697cb87c7554dba19b76ad7"
+    },
+    "fly-pilot.mp4": {
+      "frames": 102,
+      "size": [
+        960,
+        640
+      ],
+      "fps": 10,
+      "duration": 10.2,
+      "decode": true,
+      "sha256": "8062f8b707f84a82afc007d2a6bb8574a4cebb932ffafbd8d185a937a9eb3a53"
     }
   }
 }
