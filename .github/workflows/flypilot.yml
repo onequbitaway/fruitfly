@@ -1,0 +1,29 @@
+name: FlyPilot
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, experiments/flypilot]
+    paths: ['experiments/flypilot/**', 'experiments/full-map/Sources/**', 'experiments/full-map/Package.swift', '.github/workflows/flypilot.yml']
+  pull_request:
+    paths: ['experiments/flypilot/**', 'experiments/full-map/Sources/**', 'experiments/full-map/Package.swift', '.github/workflows/flypilot.yml']
+permissions:
+  contents: read
+jobs:
+  checks:
+    runs-on: macos-14
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+          cache-dependency-glob: experiments/flypilot/uv.lock
+      - name: Set up the locked environment and build Swift
+        working-directory: experiments/flypilot
+        run: ./setup.sh
+      - name: Check the brain process, output optimization, pixels, and room guards
+        working-directory: experiments/flypilot
+        run: ./flypilot.sh test
+      - name: Check package contents and credits
+        working-directory: experiments/flypilot
+        run: .venv/bin/python scripts/check_sources.py

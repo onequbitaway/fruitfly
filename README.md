@@ -81,6 +81,20 @@ This Full map replay runs at three times model time.
 or run `make duel` from this repository.
 [See controls, source, and model limits.](experiments/duel/README.md)
 
+## FlyPilot
+
+A larger simulated drone meets a walking game character on a ruined battle map.
+The character leaves a doorway. A geometric contact ends the encounter.
+The Full map calculates all 166,700 selected cells. A trained output map reads
+cell rates and controls forward speed and turns. The brain wiring stays fixed.
+Rendered game sensors find the character. A separate flight controller keeps the drone level.
+The optional studio scene follows a sample portrait at a set distance.
+
+**[Get the FlyPilot experiment](https://github.com/onequbitaway/fruitfly/releases/tag/flypilot-0.1.0)**
+and [read the setup guide and results](experiments/flypilot/README.md).
+This source release uses Genesis and a local Python environment on Apple Silicon.
+It is separate from the desktop pet and does not change its download.
+
 ## Install
 
 These steps install the desktop pet. For the two-mode preview, use [its setup guide](experiments/full-map/README.md).

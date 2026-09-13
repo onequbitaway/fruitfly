@@ -1,0 +1,716 @@
+{
+  "mode": "full",
+  "scene": "outdoor",
+  "seeds": [
+    503,
+    607,
+    709
+  ],
+  "seconds": 20.0,
+  "results": [
+    {
+      "mode": "full",
+      "controller": "trained",
+      "seed": 503,
+      "frames": 200,
+      "modelSeconds": 20.0,
+      "wallSeconds": 30.853397500002757,
+      "simulationSpeed": 0.6482268281798856,
+      "meanCenterError": 0.484534323473535,
+      "meanDistanceErrorM": 2.5693451899253184,
+      "trackingSuccess": 0.175,
+      "steadyTrackingSuccess": 0.06666666666666667,
+      "steadyDistanceErrorM": 1.57827833394116,
+      "detectedFraction": 1.0,
+      "lostTargetRecoverySeconds": [],
+      "unrecovered": false,
+      "lossEpisodes": [],
+      "boundaryEvents": 0,
+      "events": [
+        {
+          "time": 8.2,
+          "type": "character contact",
+          "position": [
+            9.04798698425293,
+            2.208747148513794,
+            1.1902143955230713
+          ],
+          "characterPoint": [
+            9.284014810539723,
+            2.1023161199242844,
+            1.2055978188963254
+          ],
+          "velocity": [
+            0.9901020526885986,
+            -0.342067152261734,
+            0.027700059115886688
+          ]
+        }
+      ],
+      "scene": "outdoor",
+      "contact": true,
+      "contactTime": 8.2,
+      "calculationSeconds": 30.670742168091238
+    },
+    {
+      "mode": "full",
+      "controller": "trained",
+      "seed": 607,
+      "frames": 200,
+      "modelSeconds": 20.0,
+      "wallSeconds": 29.035633540945128,
+      "simulationSpeed": 0.6888088035618936,
+      "meanCenterError": 0.07163852984520196,
+      "meanDistanceErrorM": 2.417136196470193,
+      "trackingSuccess": 0.86,
+      "steadyTrackingSuccess": 0.96,
+      "steadyDistanceErrorM": 1.448111013478774,
+      "detectedFraction": 1.0,
+      "lostTargetRecoverySeconds": [],
+      "unrecovered": false,
+      "lossEpisodes": [],
+      "boundaryEvents": 0,
+      "events": [
+        {
+          "time": 8.14,
+          "type": "character contact",
+          "position": [
+            9.023000717163086,
+            2.1579911708831787,
+            1.1899511814117432
+          ],
+          "characterPoint": [
+            9.27425709288047,
+            2.2169169184158717,
+            1.207256114880611
+          ],
+          "velocity": [
+            0.9935621619224548,
+            -0.33728793263435364,
+            0.029070070013403893
+          ]
+        }
+      ],
+      "scene": "outdoor",
+      "contact": true,
+      "contactTime": 8.14,
+      "calculationSeconds": 28.854300905019045
+    },
+    {
+      "mode": "full",
+      "controller": "trained",
+      "seed": 709,
+      "frames": 200,
+      "modelSeconds": 20.0,
+      "wallSeconds": 30.01588362501934,
+      "simulationSpeed": 0.6663138840040432,
+      "meanCenterError": 0.3051796991577418,
+      "meanDistanceErrorM": 2.4400264038722987,
+      "trackingSuccess": 0.235,
+      "steadyTrackingSuccess": 0.16666666666666666,
+      "steadyDistanceErrorM": 1.4819859112984015,
+      "detectedFraction": 1.0,
+      "lostTargetRecoverySeconds": [],
+      "unrecovered": false,
+      "lossEpisodes": [],
+      "boundaryEvents": 0,
+      "events": [
+        {
+          "time": 8.09,
+          "type": "character contact",
+          "position": [
+            9.019776344299316,
+            2.185649871826172,
+            1.1877137422561646
+          ],
+          "characterPoint": [
+            9.276585704890325,
+            2.1607265829856184,
+            1.210743943954271
+          ],
+          "velocity": [
+            0.9863058924674988,
+            -0.3663737177848816,
+            0.027822118252515793
+          ]
+        }
+      ],
+      "scene": "outdoor",
+      "contact": true,
+      "contactTime": 8.09,
+      "calculationSeconds": 29.835017211502418
+    },
+    {
+      "mode": "full",
+      "controller": "untrained",
+      "seed": 503,
+      "frames": 200,
+      "modelSeconds": 20.0,
+      "wallSeconds": 25.687563124811277,
+      "simulationSpeed": 0.7785868944758821,
+      "meanCenterError": 0.6931911190061875,
+      "meanDistanceErrorM": 11.83839157499714,
+      "trackingSuccess": 0.115,
+      "steadyTrackingSuccess": 0.05333333333333334,
+      "steadyDistanceErrorM": 13.235222164853111,
+      "detectedFraction": 0.485,
+      "lostTargetRecoverySeconds": [],
+      "unrecovered": true,
+      "lossEpisodes": [
+        {
+          "start": 9.7,
+          "duration": 10.3,
+          "recovered": false,
+          "plannedOcclusion": false
+        }
+      ],
+      "boundaryEvents": 0,
+      "events": [],
+      "scene": "outdoor",
+      "contact": false,
+      "contactTime": null,
+      "calculationSeconds": 25.506138909375295
+    },
+    {
+      "mode": "full",
+      "controller": "untrained",
+      "seed": 607,
+      "frames": 200,
+      "modelSeconds": 20.0,
+      "wallSeconds": 24.188063957961276,
+      "simulationSpeed": 0.8268541060069914,
+      "meanCenterError": 0.7435068535199165,
+      "meanDistanceErrorM": 11.597174405826827,
+      "trackingSuccess": 0.09,
+      "steadyTrackingSuccess": 0.0,
+      "steadyDistanceErrorM": 12.987614343400232,
+      "detectedFraction": 0.41,
+      "lostTargetRecoverySeconds": [],
+      "unrecovered": true,
+      "lossEpisodes": [
+        {
+          "start": 8.2,
+          "duration": 11.8,
+          "recovered": false,
+          "plannedOcclusion": false
+        }
+      ],
+      "boundaryEvents": 0,
+      "events": [],
+      "scene": "outdoor",
+      "contact": false,
+      "contactTime": null,
+      "calculationSeconds": 24.00800833874382
+    },
+    {
+      "mode": "full",
+      "controller": "untrained",
+      "seed": 709,
+      "frames": 200,
+      "modelSeconds": 20.0,
+      "wallSeconds": 24.401863625040278,
+      "simulationSpeed": 0.8196095309489702,
+      "meanCenterError": 0.6492110702955003,
+      "meanDistanceErrorM": 11.600866738611995,
+      "trackingSuccess": 0.15,
+      "steadyTrackingSuccess": 0.12,
+      "steadyDistanceErrorM": 13.008715337544718,
+      "detectedFraction": 0.545,
+      "lostTargetRecoverySeconds": [],
+      "unrecovered": true,
+      "lossEpisodes": [
+        {
+          "start": 10.9,
+          "duration": 9.1,
+          "recovered": false,
+          "plannedOcclusion": false
+        }
+      ],
+      "boundaryEvents": 0,
+      "events": [],
+      "scene": "outdoor",
+      "contact": false,
+      "contactTime": null,
+      "calculationSeconds": 24.22306083375588
+    },
+    {
+      "mode": "full",
+      "controller": "conventional",
+      "seed": 503,
+      "frames": 200,
+      "modelSeconds": 20.0,
+      "wallSeconds": 33.351794874994084,
+      "simulationSpeed": 0.59966787619563,
+      "meanCenterError": 0.3091533305653297,
+      "meanDistanceErrorM": 2.4450205061685932,
+      "trackingSuccess": 0.305,
+      "steadyTrackingSuccess": 0.22,
+      "steadyDistanceErrorM": 1.419211478044436,
+      "detectedFraction": 1.0,
+      "lostTargetRecoverySeconds": [],
+      "unrecovered": false,
+      "lossEpisodes": [],
+      "boundaryEvents": 0,
+      "events": [
+        {
+          "time": 8.81,
+          "type": "character contact",
+          "position": [
+            9.462773323059082,
+            1.9996039867401123,
+            1.2009166479110718
+          ],
+          "characterPoint": [
+            9.70966806939644,
+            1.9580732727954084,
+            1.167659271715591
+          ],
+          "velocity": [
+            0.7732102274894714,
+            -0.339655339717865,
+            0.027033252641558647
+          ]
+        }
+      ],
+      "scene": "outdoor",
+      "contact": true,
+      "contactTime": 8.81,
+      "calculationSeconds": 33.14665562962182
+    },
+    {
+      "mode": "full",
+      "controller": "conventional",
+      "seed": 607,
+      "frames": 200,
+      "modelSeconds": 20.0,
+      "wallSeconds": 28.304752874886617,
+      "simulationSpeed": 0.706595111019146,
+      "meanCenterError": 0.06648593884008419,
+      "meanDistanceErrorM": 2.4186428441047934,
+      "trackingSuccess": 0.865,
+      "steadyTrackingSuccess": 0.9733333333333334,
+      "steadyDistanceErrorM": 1.462795877612006,
+      "detectedFraction": 1.0,
+      "lostTargetRecoverySeconds": [],
+      "unrecovered": false,
+      "lossEpisodes": [],
+      "boundaryEvents": 0,
+      "events": [
+        {
+          "time": 8.21,
+          "type": "character contact",
+          "position": [
+            9.028584480285645,
+            2.14827823638916,
+            1.1849268674850464
+          ],
+          "characterPoint": [
+            9.28611415920327,
+            2.2040789768814766,
+            1.1969137037315498
+          ],
+          "velocity": [
+            0.841317355632782,
+            -0.31080976128578186,
+            0.029453489929437637
+          ]
+        }
+      ],
+      "scene": "outdoor",
+      "contact": true,
+      "contactTime": 8.21,
+      "calculationSeconds": 28.12257129116915
+    },
+    {
+      "mode": "full",
+      "controller": "conventional",
+      "seed": 709,
+      "frames": 200,
+      "modelSeconds": 20.0,
+      "wallSeconds": 27.815919375047088,
+      "simulationSpeed": 0.7190127254230346,
+      "meanCenterError": 0.16259329281303472,
+      "meanDistanceErrorM": 2.437976467569698,
+      "trackingSuccess": 0.325,
+      "steadyTrackingSuccess": 0.25333333333333335,
+      "steadyDistanceErrorM": 1.4882544684699257,
+      "detectedFraction": 1.0,
+      "lostTargetRecoverySeconds": [],
+      "unrecovered": false,
+      "lossEpisodes": [],
+      "boundaryEvents": 0,
+      "events": [
+        {
+          "time": 8.2,
+          "type": "character contact",
+          "position": [
+            9.018806457519531,
+            2.1419665813446045,
+            1.1844980716705322
+          ],
+          "characterPoint": [
+            9.279728174853933,
+            2.1700972832839085,
+            1.1680352240929017
+          ],
+          "velocity": [
+            0.8371578454971313,
+            -0.32166245579719543,
+            0.02934539131820202
+          ]
+        }
+      ],
+      "scene": "outdoor",
+      "contact": true,
+      "contactTime": 8.2,
+      "calculationSeconds": 27.634166713105515
+    },
+    {
+      "mode": "full",
+      "controller": "zero",
+      "seed": 503,
+      "frames": 200,
+      "modelSeconds": 20.0,
+      "wallSeconds": 27.198013916844502,
+      "simulationSpeed": 0.7353478110993036,
+      "meanCenterError": 0.20880794976793754,
+      "meanDistanceErrorM": 11.753766546505787,
+      "trackingSuccess": 0.35,
+      "steadyTrackingSuccess": 0.37333333333333335,
+      "steadyDistanceErrorM": 13.11289119387823,
+      "detectedFraction": 1.0,
+      "lostTargetRecoverySeconds": [],
+      "unrecovered": false,
+      "lossEpisodes": [],
+      "boundaryEvents": 0,
+      "events": [],
+      "scene": "outdoor",
+      "contact": false,
+      "contactTime": null,
+      "calculationSeconds": 27.00174641679041
+    },
+    {
+      "mode": "full",
+      "controller": "zero",
+      "seed": 607,
+      "frames": 200,
+      "modelSeconds": 20.0,
+      "wallSeconds": 25.260175332892686,
+      "simulationSpeed": 0.7917601416628681,
+      "meanCenterError": 0.2709081524418574,
+      "meanDistanceErrorM": 11.570267939638814,
+      "trackingSuccess": 0.2,
+      "steadyTrackingSuccess": 0.08,
+      "steadyDistanceErrorM": 12.951269643188589,
+      "detectedFraction": 1.0,
+      "lostTargetRecoverySeconds": [],
+      "unrecovered": false,
+      "lossEpisodes": [],
+      "boundaryEvents": 0,
+      "events": [],
+      "scene": "outdoor",
+      "contact": false,
+      "contactTime": null,
+      "calculationSeconds": 25.079662253614515
+    },
+    {
+      "mode": "full",
+      "controller": "zero",
+      "seed": 709,
+      "frames": 200,
+      "modelSeconds": 20.0,
+      "wallSeconds": 24.42157795908861,
+      "simulationSpeed": 0.8189479006436152,
+      "meanCenterError": 0.1943396789209285,
+      "meanDistanceErrorM": 11.569284169573644,
+      "trackingSuccess": 0.385,
+      "steadyTrackingSuccess": 0.41333333333333333,
+      "steadyDistanceErrorM": 12.950283568639712,
+      "detectedFraction": 1.0,
+      "lostTargetRecoverySeconds": [],
+      "unrecovered": false,
+      "lossEpisodes": [],
+      "boundaryEvents": 0,
+      "events": [],
+      "scene": "outdoor",
+      "contact": false,
+      "contactTime": null,
+      "calculationSeconds": 24.243332620942965
+    },
+    {
+      "mode": "full",
+      "controller": "shuffled",
+      "seed": 503,
+      "frames": 200,
+      "modelSeconds": 20.0,
+      "wallSeconds": 25.595802125055343,
+      "simulationSpeed": 0.7813781299872725,
+      "meanCenterError": 0.985637462860025,
+      "meanDistanceErrorM": 9.5658536137095,
+      "trackingSuccess": 0.0,
+      "steadyTrackingSuccess": 0.0,
+      "steadyDistanceErrorM": 10.482656924764864,
+      "detectedFraction": 0.075,
+      "lostTargetRecoverySeconds": [],
+      "unrecovered": true,
+      "lossEpisodes": [
+        {
+          "start": 1.0,
+          "duration": 2.5,
+          "recovered": true,
+          "plannedOcclusion": false
+        },
+        {
+          "start": 3.7,
+          "duration": 3.9,
+          "recovered": true,
+          "plannedOcclusion": false
+        },
+        {
+          "start": 7.8,
+          "duration": 8.2,
+          "recovered": true,
+          "plannedOcclusion": false
+        },
+        {
+          "start": 16.1,
+          "duration": 3.9,
+          "recovered": false,
+          "plannedOcclusion": false
+        }
+      ],
+      "boundaryEvents": 0,
+      "events": [],
+      "scene": "outdoor",
+      "contact": false,
+      "contactTime": null,
+      "calculationSeconds": 25.41539866104722
+    },
+    {
+      "mode": "full",
+      "controller": "shuffled",
+      "seed": 607,
+      "frames": 200,
+      "modelSeconds": 20.0,
+      "wallSeconds": 23.93616354209371,
+      "simulationSpeed": 0.8355557884131414,
+      "meanCenterError": 0.9713349545931783,
+      "meanDistanceErrorM": 8.830820246933953,
+      "trackingSuccess": 0.0,
+      "steadyTrackingSuccess": 0.0,
+      "steadyDistanceErrorM": 9.688848079889649,
+      "detectedFraction": 0.085,
+      "lostTargetRecoverySeconds": [],
+      "unrecovered": true,
+      "lossEpisodes": [
+        {
+          "start": 1.4,
+          "duration": 2.7,
+          "recovered": true,
+          "plannedOcclusion": false
+        },
+        {
+          "start": 4.4,
+          "duration": 15.6,
+          "recovered": false,
+          "plannedOcclusion": false
+        }
+      ],
+      "boundaryEvents": 0,
+      "events": [],
+      "scene": "outdoor",
+      "contact": false,
+      "contactTime": null,
+      "calculationSeconds": 23.76205304218456
+    },
+    {
+      "mode": "full",
+      "controller": "shuffled",
+      "seed": 709,
+      "frames": 200,
+      "modelSeconds": 20.0,
+      "wallSeconds": 23.650944916065782,
+      "simulationSpeed": 0.8456321754152942,
+      "meanCenterError": 0.9861246049397928,
+      "meanDistanceErrorM": 9.469322315209043,
+      "trackingSuccess": 0.0,
+      "steadyTrackingSuccess": 0.0,
+      "steadyDistanceErrorM": 10.420019652848888,
+      "detectedFraction": 0.075,
+      "lostTargetRecoverySeconds": [],
+      "unrecovered": true,
+      "lossEpisodes": [
+        {
+          "start": 0.9,
+          "duration": 1.9,
+          "recovered": true,
+          "plannedOcclusion": false
+        },
+        {
+          "start": 2.9,
+          "duration": 0.4,
+          "recovered": true,
+          "plannedOcclusion": false
+        },
+        {
+          "start": 3.6,
+          "duration": 6.1,
+          "recovered": true,
+          "plannedOcclusion": false
+        },
+        {
+          "start": 9.8,
+          "duration": 7.5,
+          "recovered": true,
+          "plannedOcclusion": false
+        },
+        {
+          "start": 17.4,
+          "duration": 2.6,
+          "recovered": false,
+          "plannedOcclusion": false
+        }
+      ],
+      "boundaryEvents": 0,
+      "events": [],
+      "scene": "outdoor",
+      "contact": false,
+      "contactTime": null,
+      "calculationSeconds": 23.484040922950953
+    },
+    {
+      "mode": "full",
+      "controller": "disabled",
+      "seed": 503,
+      "frames": 200,
+      "modelSeconds": 20.0,
+      "wallSeconds": 23.812448207987472,
+      "simulationSpeed": 0.8398968398928148,
+      "meanCenterError": 0.12946564738752195,
+      "meanDistanceErrorM": 11.028072846619885,
+      "trackingSuccess": 0.775,
+      "steadyTrackingSuccess": 1.0,
+      "steadyDistanceErrorM": 12.178497090358276,
+      "detectedFraction": 1.0,
+      "lostTargetRecoverySeconds": [],
+      "unrecovered": false,
+      "lossEpisodes": [],
+      "boundaryEvents": 0,
+      "events": [],
+      "scene": "outdoor",
+      "contact": false,
+      "contactTime": null,
+      "calculationSeconds": 23.646370503352955
+    },
+    {
+      "mode": "full",
+      "controller": "disabled",
+      "seed": 607,
+      "frames": 200,
+      "modelSeconds": 20.0,
+      "wallSeconds": 23.62540500005707,
+      "simulationSpeed": 0.8465463343359272,
+      "meanCenterError": 0.09121780749068248,
+      "meanDistanceErrorM": 10.852022255959888,
+      "trackingSuccess": 0.87,
+      "steadyTrackingSuccess": 1.0,
+      "steadyDistanceErrorM": 12.027157258353908,
+      "detectedFraction": 1.0,
+      "lostTargetRecoverySeconds": [],
+      "unrecovered": false,
+      "lossEpisodes": [],
+      "boundaryEvents": 0,
+      "events": [],
+      "scene": "outdoor",
+      "contact": false,
+      "contactTime": null,
+      "calculationSeconds": 23.457469710847363
+    },
+    {
+      "mode": "full",
+      "controller": "disabled",
+      "seed": 709,
+      "frames": 200,
+      "modelSeconds": 20.0,
+      "wallSeconds": 38.99567516706884,
+      "simulationSpeed": 0.5128773874106339,
+      "meanCenterError": 0.1433801582206304,
+      "meanDistanceErrorM": 10.842683405153185,
+      "trackingSuccess": 0.785,
+      "steadyTrackingSuccess": 1.0,
+      "steadyDistanceErrorM": 12.014703417101828,
+      "detectedFraction": 1.0,
+      "lostTargetRecoverySeconds": [],
+      "unrecovered": false,
+      "lossEpisodes": [],
+      "boundaryEvents": 0,
+      "events": [],
+      "scene": "outdoor",
+      "contact": false,
+      "contactTime": null,
+      "calculationSeconds": 38.80983659159392
+    }
+  ],
+  "summary": {
+    "trained": {
+      "meanCenterError": 0.2871175174921596,
+      "meanDistanceErrorM": 2.4755025967559368,
+      "trackingSuccess": 0.42333333333333334,
+      "steadyTrackingSuccess": 0.3977777777777778,
+      "boundaryEvents": 0.0,
+      "simulationSpeed": 0.667783171915274,
+      "detectedFraction": 1.0,
+      "contact": 1.0
+    },
+    "untrained": {
+      "meanCenterError": 0.695303014273868,
+      "meanDistanceErrorM": 11.678810906478654,
+      "trackingSuccess": 0.11833333333333333,
+      "steadyTrackingSuccess": 0.05777777777777778,
+      "boundaryEvents": 0.0,
+      "simulationSpeed": 0.808350177143948,
+      "detectedFraction": 0.48,
+      "contact": 0.0
+    },
+    "conventional": {
+      "meanCenterError": 0.1794108540728162,
+      "meanDistanceErrorM": 2.4338799392810277,
+      "trackingSuccess": 0.4983333333333333,
+      "steadyTrackingSuccess": 0.4822222222222223,
+      "boundaryEvents": 0.0,
+      "simulationSpeed": 0.6750919042126036,
+      "detectedFraction": 1.0,
+      "contact": 1.0
+    },
+    "zero": {
+      "meanCenterError": 0.2246852603769078,
+      "meanDistanceErrorM": 11.631106218572748,
+      "trackingSuccess": 0.3116666666666667,
+      "steadyTrackingSuccess": 0.2888888888888889,
+      "boundaryEvents": 0.0,
+      "simulationSpeed": 0.782018617801929,
+      "detectedFraction": 1.0,
+      "contact": 0.0
+    },
+    "shuffled": {
+      "meanCenterError": 0.9810323407976654,
+      "meanDistanceErrorM": 9.28866539195083,
+      "trackingSuccess": 0.0,
+      "steadyTrackingSuccess": 0.0,
+      "boundaryEvents": 0.0,
+      "simulationSpeed": 0.820855364605236,
+      "detectedFraction": 0.07833333333333332,
+      "contact": 0.0
+    },
+    "disabled": {
+      "meanCenterError": 0.12135453769961162,
+      "meanDistanceErrorM": 10.907592835910984,
+      "trackingSuccess": 0.81,
+      "steadyTrackingSuccess": 1.0,
+      "boundaryEvents": 0.0,
+      "simulationSpeed": 0.733106853879792,
+      "detectedFraction": 1.0,
+      "contact": 0.0
+    }
+  }
+}

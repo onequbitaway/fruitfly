@@ -1,0 +1,826 @@
+{
+  "mode": "full",
+  "seeds": [
+    503,
+    607,
+    709
+  ],
+  "seconds": 20.0,
+  "results": [
+    {
+      "mode": "full",
+      "controller": "trained",
+      "seed": 503,
+      "frames": 200,
+      "modelSeconds": 20.0,
+      "wallSeconds": 15.226310420315713,
+      "simulationSpeed": 1.3135158451331053,
+      "meanCenterError": 0.1610022099215712,
+      "meanDistanceErrorM": 0.3326291851439288,
+      "trackingSuccess": 0.495,
+      "steadyTrackingSuccess": 0.6266666666666667,
+      "steadyDistanceErrorM": 0.18351056530267765,
+      "detectedFraction": 0.94,
+      "lostTargetRecoverySeconds": [
+        0.0
+      ],
+      "unrecovered": false,
+      "lossEpisodes": [
+        {
+          "start": 7.0,
+          "duration": 1.2,
+          "recovered": true,
+          "plannedOcclusion": true
+        }
+      ],
+      "boundaryEvents": 0,
+      "events": []
+    },
+    {
+      "mode": "full",
+      "controller": "trained",
+      "seed": 607,
+      "frames": 200,
+      "modelSeconds": 20.0,
+      "wallSeconds": 14.759079760173336,
+      "simulationSpeed": 1.355098036258943,
+      "meanCenterError": 0.1271835414459929,
+      "meanDistanceErrorM": 0.276748302255277,
+      "trackingSuccess": 0.75,
+      "steadyTrackingSuccess": 0.8933333333333333,
+      "steadyDistanceErrorM": 0.182959392526724,
+      "detectedFraction": 0.94,
+      "lostTargetRecoverySeconds": [
+        0.0
+      ],
+      "unrecovered": false,
+      "lossEpisodes": [
+        {
+          "start": 7.0,
+          "duration": 1.2,
+          "recovered": true,
+          "plannedOcclusion": true
+        }
+      ],
+      "boundaryEvents": 0,
+      "events": []
+    },
+    {
+      "mode": "full",
+      "controller": "trained",
+      "seed": 709,
+      "frames": 200,
+      "modelSeconds": 20.0,
+      "wallSeconds": 15.152526621939614,
+      "simulationSpeed": 1.3199118865788126,
+      "meanCenterError": 0.14570846339745913,
+      "meanDistanceErrorM": 0.37728215693768563,
+      "trackingSuccess": 0.505,
+      "steadyTrackingSuccess": 0.5933333333333334,
+      "steadyDistanceErrorM": 0.2459166880479642,
+      "detectedFraction": 0.94,
+      "lostTargetRecoverySeconds": [
+        0.0
+      ],
+      "unrecovered": false,
+      "lossEpisodes": [
+        {
+          "start": 7.0,
+          "duration": 1.2,
+          "recovered": true,
+          "plannedOcclusion": true
+        }
+      ],
+      "boundaryEvents": 0,
+      "events": []
+    },
+    {
+      "mode": "full",
+      "controller": "untrained",
+      "seed": 503,
+      "frames": 200,
+      "modelSeconds": 20.0,
+      "wallSeconds": 15.533462417311966,
+      "simulationSpeed": 1.2875429484227612,
+      "meanCenterError": 0.907393225133419,
+      "meanDistanceErrorM": 0.5516219372311147,
+      "trackingSuccess": 0.0,
+      "steadyTrackingSuccess": 0.0,
+      "steadyDistanceErrorM": 0.29390084556230683,
+      "detectedFraction": 0.43,
+      "lostTargetRecoverySeconds": [
+        0.5
+      ],
+      "unrecovered": false,
+      "lossEpisodes": [
+        {
+          "start": 7.0,
+          "duration": 1.7,
+          "recovered": true,
+          "plannedOcclusion": true
+        },
+        {
+          "start": 9.0,
+          "duration": 0.4,
+          "recovered": true,
+          "plannedOcclusion": false
+        },
+        {
+          "start": 9.5,
+          "duration": 0.3,
+          "recovered": true,
+          "plannedOcclusion": false
+        },
+        {
+          "start": 10.1,
+          "duration": 0.1,
+          "recovered": true,
+          "plannedOcclusion": false
+        },
+        {
+          "start": 10.3,
+          "duration": 0.2,
+          "recovered": true,
+          "plannedOcclusion": false
+        },
+        {
+          "start": 10.8,
+          "duration": 0.2,
+          "recovered": true,
+          "plannedOcclusion": false
+        },
+        {
+          "start": 11.5,
+          "duration": 8.5,
+          "recovered": false,
+          "plannedOcclusion": false
+        }
+      ],
+      "boundaryEvents": 0,
+      "events": []
+    },
+    {
+      "mode": "full",
+      "controller": "untrained",
+      "seed": 607,
+      "frames": 200,
+      "modelSeconds": 20.0,
+      "wallSeconds": 16.552947917720303,
+      "simulationSpeed": 1.2082439997645102,
+      "meanCenterError": 0.2522148715791991,
+      "meanDistanceErrorM": 0.837142505039028,
+      "trackingSuccess": 0.0,
+      "steadyTrackingSuccess": 0.0,
+      "steadyDistanceErrorM": 0.7572476896464367,
+      "detectedFraction": 0.94,
+      "lostTargetRecoverySeconds": [
+        0.0
+      ],
+      "unrecovered": false,
+      "lossEpisodes": [
+        {
+          "start": 7.0,
+          "duration": 1.2,
+          "recovered": true,
+          "plannedOcclusion": true
+        }
+      ],
+      "boundaryEvents": 0,
+      "events": []
+    },
+    {
+      "mode": "full",
+      "controller": "untrained",
+      "seed": 709,
+      "frames": 200,
+      "modelSeconds": 20.0,
+      "wallSeconds": 14.9286340768449,
+      "simulationSpeed": 1.3397072965316401,
+      "meanCenterError": 0.5931978998146952,
+      "meanDistanceErrorM": 1.358944668191237,
+      "trackingSuccess": 0.0,
+      "steadyTrackingSuccess": 0.0,
+      "steadyDistanceErrorM": 1.3372883305909193,
+      "detectedFraction": 0.755,
+      "lostTargetRecoverySeconds": [
+        0.0
+      ],
+      "unrecovered": false,
+      "lossEpisodes": [
+        {
+          "start": 7.0,
+          "duration": 1.2,
+          "recovered": true,
+          "plannedOcclusion": true
+        },
+        {
+          "start": 12.3,
+          "duration": 2.2,
+          "recovered": true,
+          "plannedOcclusion": false
+        },
+        {
+          "start": 15.4,
+          "duration": 0.3,
+          "recovered": true,
+          "plannedOcclusion": false
+        },
+        {
+          "start": 17.2,
+          "duration": 0.2,
+          "recovered": true,
+          "plannedOcclusion": false
+        },
+        {
+          "start": 18.1,
+          "duration": 0.5,
+          "recovered": true,
+          "plannedOcclusion": false
+        },
+        {
+          "start": 19.1,
+          "duration": 0.5,
+          "recovered": true,
+          "plannedOcclusion": false
+        }
+      ],
+      "boundaryEvents": 0,
+      "events": []
+    },
+    {
+      "mode": "full",
+      "controller": "conventional",
+      "seed": 503,
+      "frames": 200,
+      "modelSeconds": 20.0,
+      "wallSeconds": 14.230883916839957,
+      "simulationSpeed": 1.4053940793047452,
+      "meanCenterError": 0.16431136248167605,
+      "meanDistanceErrorM": 0.34110086587197797,
+      "trackingSuccess": 0.52,
+      "steadyTrackingSuccess": 0.64,
+      "steadyDistanceErrorM": 0.1944431917374467,
+      "detectedFraction": 0.935,
+      "lostTargetRecoverySeconds": [
+        0.0
+      ],
+      "unrecovered": false,
+      "lossEpisodes": [
+        {
+          "start": 4.9,
+          "duration": 0.1,
+          "recovered": true,
+          "plannedOcclusion": false
+        },
+        {
+          "start": 7.0,
+          "duration": 1.2,
+          "recovered": true,
+          "plannedOcclusion": true
+        }
+      ],
+      "boundaryEvents": 0,
+      "events": []
+    },
+    {
+      "mode": "full",
+      "controller": "conventional",
+      "seed": 607,
+      "frames": 200,
+      "modelSeconds": 20.0,
+      "wallSeconds": 14.051566198235378,
+      "simulationSpeed": 1.4233288814816698,
+      "meanCenterError": 0.127527359208907,
+      "meanDistanceErrorM": 0.267269975979461,
+      "trackingSuccess": 0.77,
+      "steadyTrackingSuccess": 0.92,
+      "steadyDistanceErrorM": 0.17277354282046933,
+      "detectedFraction": 0.94,
+      "lostTargetRecoverySeconds": [
+        0.0
+      ],
+      "unrecovered": false,
+      "lossEpisodes": [
+        {
+          "start": 7.0,
+          "duration": 1.2,
+          "recovered": true,
+          "plannedOcclusion": true
+        }
+      ],
+      "boundaryEvents": 0,
+      "events": []
+    },
+    {
+      "mode": "full",
+      "controller": "conventional",
+      "seed": 709,
+      "frames": 200,
+      "modelSeconds": 20.0,
+      "wallSeconds": 13.190543421776965,
+      "simulationSpeed": 1.5162377591647167,
+      "meanCenterError": 0.14096762756584214,
+      "meanDistanceErrorM": 0.3578272726189142,
+      "trackingSuccess": 0.585,
+      "steadyTrackingSuccess": 0.68,
+      "steadyDistanceErrorM": 0.22037803046592402,
+      "detectedFraction": 0.94,
+      "lostTargetRecoverySeconds": [
+        0.0
+      ],
+      "unrecovered": false,
+      "lossEpisodes": [
+        {
+          "start": 7.0,
+          "duration": 1.2,
+          "recovered": true,
+          "plannedOcclusion": true
+        }
+      ],
+      "boundaryEvents": 0,
+      "events": []
+    },
+    {
+      "mode": "full",
+      "controller": "zero",
+      "seed": 503,
+      "frames": 200,
+      "modelSeconds": 20.0,
+      "wallSeconds": 13.281029246514663,
+      "simulationSpeed": 1.5059073832887309,
+      "meanCenterError": 0.3038436466478743,
+      "meanDistanceErrorM": 1.4741598862918295,
+      "trackingSuccess": 0.0,
+      "steadyTrackingSuccess": 0.0,
+      "steadyDistanceErrorM": 1.3832783791070602,
+      "detectedFraction": 0.94,
+      "lostTargetRecoverySeconds": [
+        0.0
+      ],
+      "unrecovered": false,
+      "lossEpisodes": [
+        {
+          "start": 7.0,
+          "duration": 1.2,
+          "recovered": true,
+          "plannedOcclusion": true
+        }
+      ],
+      "boundaryEvents": 2,
+      "events": [
+        {
+          "time": 7.36,
+          "type": "room boundary",
+          "position": [
+            -1.8012151718139648,
+            0.11695519089698792,
+            1.1991490125656128
+          ]
+        },
+        {
+          "time": 15.52,
+          "type": "room boundary",
+          "position": [
+            -1.8030192852020264,
+            -0.05246945470571518,
+            1.1991122961044312
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "full",
+      "controller": "zero",
+      "seed": 607,
+      "frames": 200,
+      "modelSeconds": 20.0,
+      "wallSeconds": 13.580086628440768,
+      "simulationSpeed": 1.4727446552597103,
+      "meanCenterError": 0.22170011242444163,
+      "meanDistanceErrorM": 1.5120188621384962,
+      "trackingSuccess": 0.0,
+      "steadyTrackingSuccess": 0.0,
+      "steadyDistanceErrorM": 1.5240976728597249,
+      "detectedFraction": 0.94,
+      "lostTargetRecoverySeconds": [
+        0.0
+      ],
+      "unrecovered": false,
+      "lossEpisodes": [
+        {
+          "start": 7.0,
+          "duration": 1.2,
+          "recovered": true,
+          "plannedOcclusion": true
+        }
+      ],
+      "boundaryEvents": 2,
+      "events": [
+        {
+          "time": 7.85,
+          "type": "room boundary",
+          "position": [
+            -1.8011914491653442,
+            0.10861416906118393,
+            1.199524998664856
+          ]
+        },
+        {
+          "time": 15.94,
+          "type": "room boundary",
+          "position": [
+            -1.8012698888778687,
+            0.2103697508573532,
+            1.1996212005615234
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "full",
+      "controller": "zero",
+      "seed": 709,
+      "frames": 200,
+      "modelSeconds": 20.0,
+      "wallSeconds": 14.206671651918441,
+      "simulationSpeed": 1.4077892760546231,
+      "meanCenterError": 0.23593426763662137,
+      "meanDistanceErrorM": 1.5927166973648321,
+      "trackingSuccess": 0.0,
+      "steadyTrackingSuccess": 0.0,
+      "steadyDistanceErrorM": 1.519474943673872,
+      "detectedFraction": 0.94,
+      "lostTargetRecoverySeconds": [
+        0.0
+      ],
+      "unrecovered": false,
+      "lossEpisodes": [
+        {
+          "start": 7.0,
+          "duration": 1.2,
+          "recovered": true,
+          "plannedOcclusion": true
+        }
+      ],
+      "boundaryEvents": 2,
+      "events": [
+        {
+          "time": 6.99,
+          "type": "room boundary",
+          "position": [
+            -1.802781343460083,
+            0.16495296359062195,
+            1.1987199783325195
+          ]
+        },
+        {
+          "time": 15.07,
+          "type": "room boundary",
+          "position": [
+            -1.800308108329773,
+            0.2256205826997757,
+            1.198642373085022
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "full",
+      "controller": "shuffled",
+      "seed": 503,
+      "frames": 200,
+      "modelSeconds": 20.0,
+      "wallSeconds": 13.864009548677132,
+      "simulationSpeed": 1.442584118957733,
+      "meanCenterError": 0.9838719999790192,
+      "meanDistanceErrorM": 0.4680254569265607,
+      "trackingSuccess": 0.0,
+      "steadyTrackingSuccess": 0.0,
+      "steadyDistanceErrorM": 0.23755299142011335,
+      "detectedFraction": 0.095,
+      "lostTargetRecoverySeconds": [
+        0.0
+      ],
+      "unrecovered": false,
+      "lossEpisodes": [
+        {
+          "start": 0.8,
+          "duration": 4.0,
+          "recovered": true,
+          "plannedOcclusion": false
+        },
+        {
+          "start": 5.0,
+          "duration": 0.8,
+          "recovered": true,
+          "plannedOcclusion": false
+        },
+        {
+          "start": 6.0,
+          "duration": 2.2,
+          "recovered": true,
+          "plannedOcclusion": false
+        },
+        {
+          "start": 8.5,
+          "duration": 1.9,
+          "recovered": true,
+          "plannedOcclusion": false
+        },
+        {
+          "start": 10.6,
+          "duration": 0.9,
+          "recovered": true,
+          "plannedOcclusion": false
+        },
+        {
+          "start": 11.7,
+          "duration": 8.3,
+          "recovered": false,
+          "plannedOcclusion": false
+        }
+      ],
+      "boundaryEvents": 0,
+      "events": []
+    },
+    {
+      "mode": "full",
+      "controller": "shuffled",
+      "seed": 607,
+      "frames": 200,
+      "modelSeconds": 20.0,
+      "wallSeconds": 13.617392955347896,
+      "simulationSpeed": 1.4687099113303836,
+      "meanCenterError": 0.9137595594045707,
+      "meanDistanceErrorM": 0.3762562414428215,
+      "trackingSuccess": 0.0,
+      "steadyTrackingSuccess": 0.0,
+      "steadyDistanceErrorM": 0.2875981473469808,
+      "detectedFraction": 0.21,
+      "lostTargetRecoverySeconds": [
+        0.3
+      ],
+      "unrecovered": false,
+      "lossEpisodes": [
+        {
+          "start": 2.3,
+          "duration": 6.2,
+          "recovered": true,
+          "plannedOcclusion": false
+        },
+        {
+          "start": 8.6,
+          "duration": 0.5,
+          "recovered": true,
+          "plannedOcclusion": false
+        },
+        {
+          "start": 9.3,
+          "duration": 0.6,
+          "recovered": true,
+          "plannedOcclusion": false
+        },
+        {
+          "start": 10.2,
+          "duration": 0.6,
+          "recovered": true,
+          "plannedOcclusion": false
+        },
+        {
+          "start": 11.0,
+          "duration": 0.1,
+          "recovered": true,
+          "plannedOcclusion": false
+        },
+        {
+          "start": 11.5,
+          "duration": 0.6,
+          "recovered": true,
+          "plannedOcclusion": false
+        },
+        {
+          "start": 12.5,
+          "duration": 0.7,
+          "recovered": true,
+          "plannedOcclusion": false
+        },
+        {
+          "start": 13.5,
+          "duration": 6.5,
+          "recovered": false,
+          "plannedOcclusion": false
+        }
+      ],
+      "boundaryEvents": 0,
+      "events": []
+    },
+    {
+      "mode": "full",
+      "controller": "shuffled",
+      "seed": 709,
+      "frames": 200,
+      "modelSeconds": 20.0,
+      "wallSeconds": 13.808991839643568,
+      "simulationSpeed": 1.4483316546384628,
+      "meanCenterError": 0.9392906060442329,
+      "meanDistanceErrorM": 0.4330643403702111,
+      "trackingSuccess": 0.0,
+      "steadyTrackingSuccess": 0.0,
+      "steadyDistanceErrorM": 0.26263557700323115,
+      "detectedFraction": 0.175,
+      "lostTargetRecoverySeconds": [
+        0.0
+      ],
+      "unrecovered": false,
+      "lossEpisodes": [
+        {
+          "start": 1.8,
+          "duration": 3.5,
+          "recovered": true,
+          "plannedOcclusion": false
+        },
+        {
+          "start": 5.5,
+          "duration": 0.9,
+          "recovered": true,
+          "plannedOcclusion": false
+        },
+        {
+          "start": 6.6,
+          "duration": 1.6,
+          "recovered": true,
+          "plannedOcclusion": false
+        },
+        {
+          "start": 8.5,
+          "duration": 1.5,
+          "recovered": true,
+          "plannedOcclusion": false
+        },
+        {
+          "start": 10.3,
+          "duration": 0.5,
+          "recovered": true,
+          "plannedOcclusion": false
+        },
+        {
+          "start": 11.1,
+          "duration": 0.7,
+          "recovered": true,
+          "plannedOcclusion": false
+        },
+        {
+          "start": 12.2,
+          "duration": 7.8,
+          "recovered": false,
+          "plannedOcclusion": false
+        }
+      ],
+      "boundaryEvents": 0,
+      "events": []
+    },
+    {
+      "mode": "full",
+      "controller": "disabled",
+      "seed": 503,
+      "frames": 200,
+      "modelSeconds": 20.0,
+      "wallSeconds": 13.85284637613222,
+      "simulationSpeed": 1.4437466104048498,
+      "meanCenterError": 0.3309833363769576,
+      "meanDistanceErrorM": 0.8499612558170168,
+      "trackingSuccess": 0.0,
+      "steadyTrackingSuccess": 0.0,
+      "steadyDistanceErrorM": 0.6796219637063152,
+      "detectedFraction": 0.94,
+      "lostTargetRecoverySeconds": [
+        0.0
+      ],
+      "unrecovered": false,
+      "lossEpisodes": [
+        {
+          "start": 7.0,
+          "duration": 1.2,
+          "recovered": true,
+          "plannedOcclusion": true
+        }
+      ],
+      "boundaryEvents": 0,
+      "events": []
+    },
+    {
+      "mode": "full",
+      "controller": "disabled",
+      "seed": 607,
+      "frames": 200,
+      "modelSeconds": 20.0,
+      "wallSeconds": 14.176945127313957,
+      "simulationSpeed": 1.4107411590009669,
+      "meanCenterError": 0.3264127437467687,
+      "meanDistanceErrorM": 0.8221141894946542,
+      "trackingSuccess": 0.035,
+      "steadyTrackingSuccess": 0.04666666666666667,
+      "steadyDistanceErrorM": 0.7369553640148095,
+      "detectedFraction": 0.94,
+      "lostTargetRecoverySeconds": [
+        0.0
+      ],
+      "unrecovered": false,
+      "lossEpisodes": [
+        {
+          "start": 7.0,
+          "duration": 1.2,
+          "recovered": true,
+          "plannedOcclusion": true
+        }
+      ],
+      "boundaryEvents": 0,
+      "events": []
+    },
+    {
+      "mode": "full",
+      "controller": "disabled",
+      "seed": 709,
+      "frames": 200,
+      "modelSeconds": 20.0,
+      "wallSeconds": 14.388061753241345,
+      "simulationSpeed": 1.3900412955549344,
+      "meanCenterError": 0.30571106577524915,
+      "meanDistanceErrorM": 1.01634053119844,
+      "trackingSuccess": 0.0,
+      "steadyTrackingSuccess": 0.0,
+      "steadyDistanceErrorM": 0.8838684996046156,
+      "detectedFraction": 0.94,
+      "lostTargetRecoverySeconds": [
+        0.0
+      ],
+      "unrecovered": false,
+      "lossEpisodes": [
+        {
+          "start": 7.0,
+          "duration": 1.2,
+          "recovered": true,
+          "plannedOcclusion": true
+        }
+      ],
+      "boundaryEvents": 0,
+      "events": []
+    }
+  ],
+  "summary": {
+    "trained": {
+      "meanCenterError": 0.1446314049216744,
+      "meanDistanceErrorM": 0.3288865481122972,
+      "trackingSuccess": 0.5833333333333334,
+      "steadyTrackingSuccess": 0.7044444444444444,
+      "boundaryEvents": 0.0,
+      "simulationSpeed": 1.3295085893236205,
+      "detectedFraction": 0.94
+    },
+    "untrained": {
+      "meanCenterError": 0.5842686655091044,
+      "meanDistanceErrorM": 0.91590303682046,
+      "trackingSuccess": 0.0,
+      "steadyTrackingSuccess": 0.0,
+      "boundaryEvents": 0.0,
+      "simulationSpeed": 1.2784980815729705,
+      "detectedFraction": 0.7083333333333334
+    },
+    "conventional": {
+      "meanCenterError": 0.14426878308547506,
+      "meanDistanceErrorM": 0.3220660381567844,
+      "trackingSuccess": 0.625,
+      "steadyTrackingSuccess": 0.7466666666666667,
+      "boundaryEvents": 0.0,
+      "simulationSpeed": 1.4483202399837107,
+      "detectedFraction": 0.9383333333333334
+    },
+    "zero": {
+      "meanCenterError": 0.2538260089029791,
+      "meanDistanceErrorM": 1.5262984819317191,
+      "trackingSuccess": 0.0,
+      "steadyTrackingSuccess": 0.0,
+      "boundaryEvents": 2.0,
+      "simulationSpeed": 1.462147104867688,
+      "detectedFraction": 0.94
+    },
+    "shuffled": {
+      "meanCenterError": 0.9456407218092742,
+      "meanDistanceErrorM": 0.4257820129131977,
+      "trackingSuccess": 0.0,
+      "steadyTrackingSuccess": 0.0,
+      "boundaryEvents": 0.0,
+      "simulationSpeed": 1.4532085616421933,
+      "detectedFraction": 0.16
+    },
+    "disabled": {
+      "meanCenterError": 0.3210357152996585,
+      "meanDistanceErrorM": 0.8961386588367036,
+      "trackingSuccess": 0.011666666666666667,
+      "steadyTrackingSuccess": 0.015555555555555557,
+      "boundaryEvents": 0.0,
+      "simulationSpeed": 1.4148430216535839,
+      "detectedFraction": 0.94
+    }
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "date": "2026-09-13",
+  "platform": "Apple M4 Max / 48 GB / macOS 26.5",
+  "scene": "battlefield-1",
+  "tests": {
+    "command": "./flypilot.sh test",
+    "passed": 13
+  },
+  "swiftBuild": {
+    "command": "./setup.sh",
+    "configuration": "release",
+    "passed": true
+  },
+  "sourceChecks": {
+    "command": ".venv/bin/python scripts/check_sources.py",
+    "passed": true
+  },
+  "cleanSource": {
+    "setup": true,
+    "tests": 13,
+    "replay": {
+      "frames": 10,
+      "exportedRateFrames": 10,
+      "brainFrames": 10,
+      "physics": true,
+      "positionToleranceM": 2e-05,
+      "maxPositionErrorM": 0.0,
+      "maxActionError": 0.0
+    },
+    "note": "Staged public source in a separate checkout. Reused the previously validated clean environment and brain pack. Setup fetched the pinned new character."
+  },
+  "fullReplay": {
+    "frames": 102,
+    "exportedRateFrames": 102,
+    "brainFrames": 102,
+    "physics": true,
+    "positionToleranceM": 2e-05,
+    "maxPositionErrorM": 0.0,
+    "maxActionError": 0.0
+  },
+  "enhancedRenderer": {
+    "command": "./flypilot.sh render RECORDING --output OUTPUT",
+    "endToEndFrames": 10,
+    "videoDecode": true,
+    "audio": "AAC mono 48 kHz",
+    "sceneryOnly": true
+  },
+  "liveUI": {
+    "fullContact": true,
+    "fullAutoPauseAtModelSeconds": 10.2,
+    "reset": true,
+    "simpleMode": true,
+    "simplePauseStableAtModelSeconds": 3.6,
+    "restoredFullMode": true
+  },
+  "evaluation": {
+    "battleRuns": 36,
+    "studioRuns": 36,
+    "heldOutSeeds": [
+      503,
+      607,
+      709
+    ]
+  },
+  "limits": [
+    "Tested on this Mac only.",
+    "Live view uses Genesis. Enhanced video is an offline Cycles render.",
+    "Privileged game mask and depth sensors.",
+    "Geometric character contact and programmed response."
+  ],
+  "finalVideos": {
+    "flypilot-cinematic.mp4": {
+      "frames": 102,
+      "size": [
+        1920,
+        1080
+      ],
+      "fps": 10.0,
+      "duration": 10.2,
+      "decode": true,
+      "sha256": "46c46fdffaec4bf4f5b074936010326a4d45065a8a1791e532deb413aff79f66"
+    },
+    "battle-map.mp4": {
+      "frames": 102,
+      "size": [
+        1280,
+        800
+      ],
+      "fps": 10.0,
+      "duration": 10.2,
+      "decode": true,
+      "sha256": "b842be14a6d137c7e55c97c83853863a6b4385a40729e380b984d5e69ae51ed9"
+    }
+  }
+}

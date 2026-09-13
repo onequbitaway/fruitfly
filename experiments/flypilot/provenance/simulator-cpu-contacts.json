@@ -1,0 +1,24 @@
+{
+  "backend": "cpu",
+  "contactsEnabled": true,
+  "buildSeconds": 27.53920108289458,
+  "hoverPosition": [
+    0.0,
+    0.0,
+    1.194861650466919
+  ],
+  "hoverErrorM": 0.00513834953308101,
+  "dropPosition": [
+    -8.699213083218638e-08,
+    8.524818184696414e-09,
+    0.7623929977416992
+  ],
+  "freeFallControl": [
+    2.0,
+    5.436439631800738e-10,
+    0.012354942038655281
+  ],
+  "passedThroughSolidSlab": false,
+  "stepHz": 3934.837491920982,
+  "wallSeconds": 28.24533304083161
+}

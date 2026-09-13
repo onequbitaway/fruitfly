@@ -1,0 +1,10 @@
+.venv/
+.build/
+runs/
+private/
+.setup-start
+*.log
+
+
+# Mixamo model stays at its original source. Setup fetches the pinned game sample.
+assets/Soldier/Soldier.glb

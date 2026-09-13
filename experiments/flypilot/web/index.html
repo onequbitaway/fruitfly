@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FlyPilot</title><link rel="stylesheet" href="/style.css">
+<body>
+<header><a class="brand" href="/">FlyPilot <span>Flight workbench</span></a>
+<div class="controls" aria-label="Flight controls">
+<label>Brain <select id="mode"><option value="full">Full map</option><option value="simple">Simple</option></select></label>
+<button id="start" class="primary">Start</button><button id="pause">Pause</button><button id="reset">Reset</button>
+<button id="details" aria-expanded="false" aria-controls="detail-panel">Details</button>
+</div></header>
+<main>
+<div class="status"><span id="dot"></span><p id="status" role="status">Loading the scene and brain.</p><p id="clock">No flight yet</p></div>
+<div id="error" role="alert" hidden></div>
+<section class="viewport" aria-label="Flight view">
+<img id="view" hidden alt="Live world, drone camera, flight path, and calculated cell rates.">
+<div id="empty"><svg viewBox="0 0 240 100" aria-hidden="true"><path d="M48 54 90 38 120 51 153 37 195 52M90 38v26l30 16 33-17V37M120 51v29"/><ellipse cx="47" cy="51" rx="32" ry="11"/><ellipse cx="195" cy="51" rx="32" ry="11"/><ellipse cx="88" cy="33" rx="29" ry="9"/><ellipse cx="154" cy="32" rx="29" ry="9"/></svg><h1>Give the model a flight.</h1><p>Select Start to run the flight.</p><p id="cell-count">The Full map calculates 166,700 cells.</p></div>
+</section>
+<section id="detail-panel" hidden>
+<div><h2>What controls the drone</h2><p>The street camera returns a rendered character mask and depth. These are game sensors. A chosen input map sends the measurements to the fly model. A trained output map reads calculated cell rates. A flight controller keeps the drone level.</p><p>The wiring stays fixed. Training changes only the output map. The fly model does not recognize a person.</p></div>
+<div><h2>Read the view</h2><p>Hz means spikes per second. Each point uses a recorded cell position. The plot shows a fixed sample of positions. All cells still run. Cell brightness uses the exact saved rate.</p><p>Simple uses smell cells as a visual proxy. Its weights are trained separately.</p><p id="hash">No rate hash yet.</p></div>
+<div><h2>Limits and controls</h2><p>The walking character is fictional. Its walk and contact response are programmed. A body contact ends the encounter. The scene uses geometric contact and boundary checks. Native drone contact is disabled.</p><p>Reset starts the same seed. Mode starts a new run. Pause stops model time. The model may run slower than real time.</p><p>Studio mode follows a NASA sample portrait with an image matcher. Street mode uses an animated 3D character. No real camera, real drone, account, or analytics is used.</p></div>
+</section>
+</main>
+<footer><span>Experimental flight model</span><span>Fixed wiring. Trained output map.</span><span id="speed">Local calculation</span></footer>
+<script src="/app.js"></script>
+</body></html>

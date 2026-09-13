@@ -1,0 +1,8 @@
+{
+  "source": "https://raw.githubusercontent.com/mrdoob/three.js/d1ed6a8be759a754749c169d9df7eebde4713462/examples/models/gltf/Soldier.glb",
+  "commit": "d1ed6a8be759a754749c169d9df7eebde4713462",
+  "sha256": "dfb230fc1f942f259dd00281a1186953ad602fc5d69067ce63e24b2aa439736b",
+  "credit": "Mixamo / Adobe. Distributed as a three.js example.",
+  "license": "Mixamo asset terms. Royalty-free use in games. Raw file is not bundled in the source or release.",
+  "terms": "https://helpx.adobe.com/creative-cloud/faq/mixamo-faq.html"
+}

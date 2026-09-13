@@ -1,0 +1,14 @@
+{
+  "repository": "https://github.com/Genesis-Embodied-AI/genesis-world",
+  "tag": "v1.4.0",
+  "object": {
+    "sha": "0ce793b42c945b6848aad624501b2ca756d3e244",
+    "type": "commit",
+    "url": "https://api.github.com/repos/Genesis-Embodied-AI/genesis-world/git/commits/0ce793b42c945b6848aad624501b2ca756d3e244"
+  },
+  "files": {
+    "fly_route.py": "9c09f493f272630797b7d8111979701994101d1526314648887e49b4b8b2771b",
+    "quadcopter_controller.py": "7c096157f2249eb5f87da272e34954f8733e386f7e0722af61f6f0e7d4e021bc",
+    "fly.py": "063b40fb1e3dc3dfbaf7d8aaf1744f9a78ae6052a8c9cfa04b6317341e68f100"
+  }
+}

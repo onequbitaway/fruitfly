@@ -1,0 +1,18 @@
+{
+  "backend": "metal",
+  "buildSeconds": 86.78882966702804,
+  "hoverPosition": [
+    0.0,
+    0.0,
+    1.194861650466919
+  ],
+  "hoverErrorM": 0.00513834953308101,
+  "dropPosition": [
+    7.920322786958423e-06,
+    -7.857046512071975e-06,
+    0.7623910903930664
+  ],
+  "passedThroughSolidSlab": false,
+  "stepHz": 434.9874946409633,
+  "wallSeconds": 88.07922525005415
+}

@@ -1,0 +1,623 @@
+[
+  {
+    "name": "absl-py",
+    "version": "2.5.0",
+    "license": "Apache-2.0",
+    "classifiers": [
+      "License :: OSI Approved :: Apache Software License"
+    ]
+  },
+  {
+    "name": "annotated-types",
+    "version": "0.8.0",
+    "license": "MIT",
+    "classifiers": [
+      "License :: OSI Approved :: MIT License"
+    ]
+  },
+  {
+    "name": "av",
+    "version": "18.1.0",
+    "license": "BSD-3-Clause",
+    "classifiers": []
+  },
+  {
+    "name": "cffi",
+    "version": "2.1.1",
+    "license": "MIT-0",
+    "classifiers": []
+  },
+  {
+    "name": "coacd",
+    "version": "1.0.14",
+    "license": "MIT",
+    "classifiers": [
+      "License :: OSI Approved :: MIT License"
+    ]
+  },
+  {
+    "name": "colorama",
+    "version": "0.4.6",
+    "license": "",
+    "classifiers": [
+      "License :: OSI Approved :: BSD License"
+    ]
+  },
+  {
+    "name": "contourpy",
+    "version": "1.4.0",
+    "license": "BSD-3-Clause",
+    "classifiers": []
+  },
+  {
+    "name": "cycler",
+    "version": "0.12.1",
+    "license": "Copyright (c) 2015, matplotlib project\nAll rights reserved.\n\nRedistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the follow (see installed license)",
+    "classifiers": [
+      "License :: OSI Approved :: BSD License"
+    ]
+  },
+  {
+    "name": "dataclasses-json",
+    "version": "0.6.7",
+    "license": "MIT",
+    "classifiers": [
+      "License :: OSI Approved :: MIT License"
+    ]
+  },
+  {
+    "name": "decorator",
+    "version": "5.3.1",
+    "license": "BSD-2-Clause",
+    "classifiers": []
+  },
+  {
+    "name": "Deprecated",
+    "version": "1.3.1",
+    "license": "MIT",
+    "classifiers": [
+      "License :: OSI Approved :: MIT License"
+    ]
+  },
+  {
+    "name": "dill",
+    "version": "0.4.1",
+    "license": "BSD-3-Clause",
+    "classifiers": [
+      "License :: OSI Approved :: BSD License"
+    ]
+  },
+  {
+    "name": "DracoPy",
+    "version": "2.0.0",
+    "license": "Apache-2.0",
+    "classifiers": []
+  },
+  {
+    "name": "etils",
+    "version": "1.14.0",
+    "license": "",
+    "classifiers": [
+      "License :: OSI Approved :: Apache Software License"
+    ]
+  },
+  {
+    "name": "fast_simplification",
+    "version": "0.2.0",
+    "license": "MIT",
+    "classifiers": []
+  },
+  {
+    "name": "filelock",
+    "version": "3.32.6",
+    "license": "MIT",
+    "classifiers": [
+      "License :: OSI Approved :: MIT License"
+    ]
+  },
+  {
+    "name": "fonttools",
+    "version": "4.65.0",
+    "license": "MIT",
+    "classifiers": []
+  },
+  {
+    "name": "freetype-py",
+    "version": "2.5.1",
+    "license": "",
+    "classifiers": [
+      "License :: OSI Approved :: BSD License"
+    ]
+  },
+  {
+    "name": "frozendict",
+    "version": "2.4.7",
+    "license": "LGPL v3",
+    "classifiers": [
+      "License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)"
+    ]
+  },
+  {
+    "name": "fsspec",
+    "version": "2026.7.0",
+    "license": "BSD-3-Clause",
+    "classifiers": []
+  },
+  {
+    "name": "genesis-world",
+    "version": "1.4.0",
+    "license": "",
+    "classifiers": []
+  },
+  {
+    "name": "glfw",
+    "version": "2.10.2",
+    "license": "MIT",
+    "classifiers": [
+      "License :: OSI Approved :: MIT License"
+    ]
+  },
+  {
+    "name": "ImageIO",
+    "version": "2.37.4",
+    "license": "BSD-2-Clause",
+    "classifiers": []
+  },
+  {
+    "name": "imageio-ffmpeg",
+    "version": "0.6.0",
+    "license": "BSD-2-Clause",
+    "classifiers": [
+      "License :: OSI Approved :: BSD License"
+    ]
+  },
+  {
+    "name": "iniconfig",
+    "version": "2.3.0",
+    "license": "MIT",
+    "classifiers": []
+  },
+  {
+    "name": "Jinja2",
+    "version": "3.1.6",
+    "license": "",
+    "classifiers": [
+      "License :: OSI Approved :: BSD License"
+    ]
+  },
+  {
+    "name": "kiwisolver",
+    "version": "1.5.1",
+    "license": "=========================\n The Kiwi licensing terms\n=========================\nKiwi is licensed under the terms of the Modified BSD License (also known as\nNew or Revised BSD), as fo (see installed license)",
+    "classifiers": [
+      "License :: OSI Approved :: BSD License"
+    ]
+  },
+  {
+    "name": "lazy-loader",
+    "version": "0.5",
+    "license": "BSD-3-Clause",
+    "classifiers": []
+  },
+  {
+    "name": "libigl",
+    "version": "2.6.3",
+    "license": "",
+    "classifiers": [
+      "License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)"
+    ]
+  },
+  {
+    "name": "llvmlite",
+    "version": "0.49.0",
+    "license": "BSD-2-Clause AND Apache-2.0 WITH LLVM-exception",
+    "classifiers": []
+  },
+  {
+    "name": "markdown-it-py",
+    "version": "4.2.0",
+    "license": "",
+    "classifiers": [
+      "License :: OSI Approved :: MIT License"
+    ]
+  },
+  {
+    "name": "MarkupSafe",
+    "version": "3.0.3",
+    "license": "BSD-3-Clause",
+    "classifiers": []
+  },
+  {
+    "name": "marshmallow",
+    "version": "3.26.2",
+    "license": "",
+    "classifiers": [
+      "License :: OSI Approved :: MIT License"
+    ]
+  },
+  {
+    "name": "matplotlib",
+    "version": "3.11.2",
+    "license": "License agreement for matplotlib versions 1.3.0 and later\n =========================================================\n\n 1. This LICENSE AGREEMENT is between the Matplotlib Developme (see installed license)",
+    "classifiers": [
+      "License :: OSI Approved :: Python Software Foundation License"
+    ]
+  },
+  {
+    "name": "mdurl",
+    "version": "0.1.2",
+    "license": "",
+    "classifiers": [
+      "License :: OSI Approved :: MIT License"
+    ]
+  },
+  {
+    "name": "moviepy",
+    "version": "2.2.1",
+    "license": "MIT License",
+    "classifiers": [
+      "License :: OSI Approved :: MIT License"
+    ]
+  },
+  {
+    "name": "mpmath",
+    "version": "1.3.0",
+    "license": "BSD",
+    "classifiers": [
+      "License :: OSI Approved :: BSD License"
+    ]
+  },
+  {
+    "name": "mujoco",
+    "version": "3.13.0",
+    "license": "Apache-2.0",
+    "classifiers": []
+  },
+  {
+    "name": "mypy_extensions",
+    "version": "1.1.0",
+    "license": "MIT",
+    "classifiers": []
+  },
+  {
+    "name": "networkx",
+    "version": "3.6.1",
+    "license": "BSD-3-Clause",
+    "classifiers": []
+  },
+  {
+    "name": "numba",
+    "version": "0.67.0",
+    "license": "BSD",
+    "classifiers": [
+      "License :: OSI Approved :: BSD License"
+    ]
+  },
+  {
+    "name": "numpy",
+    "version": "2.5.3",
+    "license": "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0",
+    "classifiers": []
+  },
+  {
+    "name": "opencv-python",
+    "version": "4.13.0.92",
+    "license": "Apache 2.0",
+    "classifiers": [
+      "License :: OSI Approved :: Apache Software License"
+    ]
+  },
+  {
+    "name": "OpenEXR",
+    "version": "3.4.15",
+    "license": "",
+    "classifiers": []
+  },
+  {
+    "name": "packaging",
+    "version": "26.3",
+    "license": "Apache-2.0 OR BSD-2-Clause",
+    "classifiers": []
+  },
+  {
+    "name": "pillow",
+    "version": "11.3.0",
+    "license": "MIT-CMU",
+    "classifiers": []
+  },
+  {
+    "name": "plotly",
+    "version": "5.24.1",
+    "license": "MIT",
+    "classifiers": [
+      "License :: OSI Approved :: MIT License"
+    ]
+  },
+  {
+    "name": "pluggy",
+    "version": "1.6.0",
+    "license": "MIT",
+    "classifiers": [
+      "License :: OSI Approved :: MIT License"
+    ]
+  },
+  {
+    "name": "proglog",
+    "version": "0.1.12",
+    "license": "MIT",
+    "classifiers": []
+  },
+  {
+    "name": "psutil",
+    "version": "7.2.2",
+    "license": "BSD-3-Clause",
+    "classifiers": []
+  },
+  {
+    "name": "py-cpuinfo",
+    "version": "9.0.0",
+    "license": "MIT",
+    "classifiers": [
+      "License :: OSI Approved :: MIT License"
+    ]
+  },
+  {
+    "name": "pycollada",
+    "version": "0.9.3",
+    "license": "BSD",
+    "classifiers": []
+  },
+  {
+    "name": "pycparser",
+    "version": "3.0",
+    "license": "BSD-3-Clause",
+    "classifiers": []
+  },
+  {
+    "name": "pydantic",
+    "version": "2.13.5",
+    "license": "MIT",
+    "classifiers": []
+  },
+  {
+    "name": "pydantic_core",
+    "version": "2.46.5",
+    "license": "MIT",
+    "classifiers": []
+  },
+  {
+    "name": "PyGEL3D",
+    "version": "0.8.2",
+    "license": "MIT",
+    "classifiers": []
+  },
+  {
+    "name": "pyglet",
+    "version": "2.1.16",
+    "license": "",
+    "classifiers": []
+  },
+  {
+    "name": "pygltflib",
+    "version": "1.16.0",
+    "license": "",
+    "classifiers": [
+      "License :: OSI Approved :: MIT License"
+    ]
+  },
+  {
+    "name": "Pygments",
+    "version": "2.21.0",
+    "license": "BSD-2-Clause",
+    "classifiers": []
+  },
+  {
+    "name": "pymeshlab",
+    "version": "2025.7.post1",
+    "license": "GPL3",
+    "classifiers": []
+  },
+  {
+    "name": "PyOpenGL",
+    "version": "3.1.10",
+    "license": "",
+    "classifiers": [
+      "License :: OSI Approved :: BSD License"
+    ]
+  },
+  {
+    "name": "pyparsing",
+    "version": "3.3.2",
+    "license": "MIT",
+    "classifiers": []
+  },
+  {
+    "name": "pysplashsurf",
+    "version": "0.14.1.0",
+    "license": "MIT",
+    "classifiers": []
+  },
+  {
+    "name": "pytest",
+    "version": "8.4.2",
+    "license": "MIT",
+    "classifiers": [
+      "License :: OSI Approved :: MIT License"
+    ]
+  },
+  {
+    "name": "python-dateutil",
+    "version": "2.9.0.post0",
+    "license": "Dual License",
+    "classifiers": [
+      "License :: OSI Approved :: BSD License",
+      "License :: OSI Approved :: Apache Software License"
+    ]
+  },
+  {
+    "name": "python-dotenv",
+    "version": "1.2.3",
+    "license": "BSD-3-Clause",
+    "classifiers": []
+  },
+  {
+    "name": "PyYAML",
+    "version": "6.0.3",
+    "license": "MIT",
+    "classifiers": [
+      "License :: OSI Approved :: MIT License"
+    ]
+  },
+  {
+    "name": "quadrants",
+    "version": "1.3.0",
+    "license": "Apache-2.0",
+    "classifiers": []
+  },
+  {
+    "name": "rich",
+    "version": "15.0.0",
+    "license": "MIT",
+    "classifiers": [
+      "License :: OSI Approved :: MIT License"
+    ]
+  },
+  {
+    "name": "rtree",
+    "version": "1.4.1",
+    "license": "MIT",
+    "classifiers": []
+  },
+  {
+    "name": "scikit-image",
+    "version": "0.26.0",
+    "license": "Files: *\n Copyright: 2009-2022 the scikit-image team\n License: BSD-3-Clause\n\n Files: doc/source/themes/scikit-image/layout.html\n Copyright: 2007-2010 the Sphinx team\n License: BSD- (see installed license)",
+    "classifiers": [
+      "License :: OSI Approved :: BSD License"
+    ]
+  },
+  {
+    "name": "scipy",
+    "version": "1.18.1",
+    "license": "Copyright (c) 2001-2002 Enthought, Inc. 2003, SciPy Developers.\n All rights reserved.\n\n Redistribution and use in source and binary forms, with or without\n modification, are permit (see installed license)",
+    "classifiers": [
+      "License :: OSI Approved :: BSD License"
+    ]
+  },
+  {
+    "name": "setuptools",
+    "version": "84.0.0",
+    "license": "MIT",
+    "classifiers": []
+  },
+  {
+    "name": "six",
+    "version": "1.17.0",
+    "license": "MIT",
+    "classifiers": [
+      "License :: OSI Approved :: MIT License"
+    ]
+  },
+  {
+    "name": "sympy",
+    "version": "1.14.0",
+    "license": "BSD",
+    "classifiers": [
+      "License :: OSI Approved :: BSD License"
+    ]
+  },
+  {
+    "name": "tenacity",
+    "version": "9.1.4",
+    "license": "Apache 2.0",
+    "classifiers": [
+      "License :: OSI Approved :: Apache Software License"
+    ]
+  },
+  {
+    "name": "tetgen",
+    "version": "0.8.2",
+    "license": "",
+    "classifiers": [
+      "License :: OSI Approved :: GNU Affero General Public License v3"
+    ]
+  },
+  {
+    "name": "tifffile",
+    "version": "2026.9.9",
+    "license": "BSD-3-Clause",
+    "classifiers": []
+  },
+  {
+    "name": "torch",
+    "version": "2.10.0",
+    "license": "BSD-3-Clause",
+    "classifiers": []
+  },
+  {
+    "name": "tqdm",
+    "version": "4.70.1",
+    "license": "MPL-2.0 AND MIT",
+    "classifiers": []
+  },
+  {
+    "name": "trimesh",
+    "version": "5.1.0",
+    "license": "The MIT License (MIT)\n\nCopyright (c) 2023 Michael Dawson-Haggerty\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated docu (see installed license)",
+    "classifiers": [
+      "License :: OSI Approved :: MIT License"
+    ]
+  },
+  {
+    "name": "typing-inspect",
+    "version": "0.9.0",
+    "license": "MIT",
+    "classifiers": [
+      "License :: OSI Approved :: MIT License"
+    ]
+  },
+  {
+    "name": "typing-inspection",
+    "version": "0.4.4",
+    "license": "MIT",
+    "classifiers": []
+  },
+  {
+    "name": "typing_extensions",
+    "version": "4.16.0",
+    "license": "PSF-2.0",
+    "classifiers": []
+  },
+  {
+    "name": "vtk",
+    "version": "9.7.0",
+    "license": "BSD",
+    "classifiers": [
+      "License :: OSI Approved :: BSD License"
+    ]
+  },
+  {
+    "name": "wrapt",
+    "version": "2.4.1",
+    "license": "BSD-2-Clause",
+    "classifiers": []
+  },
+  {
+    "name": "xacro",
+    "version": "2.1.1",
+    "license": "Copyright Robert Haschke, Bielefeld University\n\nRedistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following condition (see installed license)",
+    "classifiers": []
+  },
+  {
+    "name": "z3-solver",
+    "version": "4.15.4.0",
+    "license": "MIT License",
+    "classifiers": []
+  },
+  {
+    "name": "zipp",
+    "version": "4.1.0",
+    "license": "MIT",
+    "classifiers": []
+  }
+]
